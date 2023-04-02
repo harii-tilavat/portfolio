@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from './about/about.component';
-import { AboutFactsComponent } from './about-facts/about-facts.component';
+import {AboutFactsComponent} from './about/about-facts/about-facts.component';
+import { ResumeComponent } from './resume/resume.component'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AboutFactsComponent } from './about-facts/about-facts.component';
     SidebarComponent,
     HeroComponent,
     AboutComponent,
-    AboutFactsComponent
+    AboutFactsComponent,
+    ResumeComponent,
   ],
   imports: [
     BrowserModule,

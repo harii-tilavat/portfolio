@@ -161,6 +161,7 @@ $poppin: 'Poppins', sans-serif;
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/img/hero-bg.jpg');
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   // background-position: right;
   color: white;
@@ -233,6 +234,14 @@ $poppin: 'Poppins', sans-serif;
     }
   }
 }
+.skill{
+  padding: 50px 0px;
+}
+.resume{
+  padding: 50px 0px;
+}
+// Media Query
+
 @media only screen and (max-width:1199px) {
   .sidebar {
     transform: translateX(-300px);
@@ -247,7 +256,6 @@ $poppin: 'Poppins', sans-serif;
       width: 100%;
     }
   }
-
 }
 
 @media only screen and (max-width:797px) {
