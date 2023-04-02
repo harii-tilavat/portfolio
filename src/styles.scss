@@ -5,6 +5,7 @@
 $main-color: #040b14;
 $main-color-light: #149ddd;
 $partition: 300px;
+$main-title: #173b6c;
 $poppin: 'Poppins', sans-serif;
 
 .bg-primary {
@@ -36,7 +37,7 @@ $poppin: 'Poppins', sans-serif;
 }
 
 .title {
-  color: $main-color;
+  color: $main-title;
   font-size: 2.3rem;
 
   &::after {
@@ -49,6 +50,10 @@ $poppin: 'Poppins', sans-serif;
     border-radius: 10px;
 
   }
+}
+
+.sub-paragraph {
+  margin-top: 20px;
 }
 
 //Sidebar
@@ -212,13 +217,17 @@ $poppin: 'Poppins', sans-serif;
   .title-content {
     .bio-content {
       font-size: 1.1rem;
+
       ul {
         list-style-type: none;
+
         li {
           margin-top: 15px;
+
           i {
             color: $main-color-light;
           }
+
           strong {
             margin: 0px 10px;
           }
@@ -227,19 +236,45 @@ $poppin: 'Poppins', sans-serif;
     }
   }
 }
-.facts{
-  .fact-clients{
-    i{
+
+.facts {
+  .fact-clients {
+    i {
       color: $main-color-light;
     }
   }
 }
-.skill{
+
+.skill {
+  padding: 50px 0px;
+  background-color: #f5f8fd;
+
+  .skill-body {
+    .progress-title {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0px;
+
+      span {
+        font-size: 0.75rem;
+        font-weight: 750;
+      }
+    }
+
+    .progress {
+      margin: 15px 0;
+      height: 10px;
+      .progress-bar{
+        background-color: $main-color-light;
+      }
+    }
+  }
+}
+
+.resume {
   padding: 50px 0px;
 }
-.resume{
-  padding: 50px 0px;
-}
+
 // Media Query
 
 @media only screen and (max-width:1199px) {
