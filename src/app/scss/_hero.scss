@@ -1,0 +1,46 @@
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/assets/img/hero-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  // background-position: right;
+  color: white;
+
+  .bar-btn {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    border: 10px solid $main-color-light;
+
+    button {
+      color: white;
+      background-color: #149ddd;
+      border: none;
+    }
+  }
+
+  .header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: $poppin;
+
+    .hero-name {
+      font-size: 4rem;
+    }
+
+    .hero-skill {
+      font-size: 1.7rem;
+
+      span {
+        border-bottom: 3px solid white;
+        padding: 5px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

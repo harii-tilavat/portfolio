@@ -1,0 +1,57 @@
+.resume {
+  color: $main-color;
+  padding: 50px 0px;
+
+  .resume-content {
+    position: relative;
+
+    .resume-title {
+      margin-bottom: 25px;
+    }
+    .resume-item {
+      margin-bottom: 25px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        border-radius: 100%;
+        border: 2px solid $main-title;
+        margin-left: -23px;
+        background: #fff;
+        &:hover {
+          border: 1px solid;
+        }
+      }
+      .year {
+        padding: 5px 10px;
+        display: inline-block;
+        background-color: #e4edf9;
+        font-size: 16px;
+      }
+
+      border-left: 2px solid $main-color;
+
+      ul {
+        li {
+          margin: 10px 0px;
+        }
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      color: black;
+      padding-left: 15px;
+
+      .resume-sub-title {
+        font-family: $poppin;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

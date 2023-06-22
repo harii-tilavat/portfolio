@@ -1,0 +1,26 @@
+.skill {
+  padding: 50px 0px;
+  background-color: #f5f8fd;
+
+  .skill-body {
+    .progress-title {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0px;
+
+      span {
+        font-size: 0.75rem;
+        font-weight: 750;
+      }
+    }
+
+    .progress {
+      margin: 15px 0;
+      height: 10px;
+
+      .progress-bar {
+        background-color: $main-color-light;
+      }
+    }
+  }
+}

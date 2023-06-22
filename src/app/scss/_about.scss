@@ -1,0 +1,26 @@
+.about {
+  color: black;
+  padding: 50px 0px;
+
+  .title-content {
+    .bio-content {
+      font-size: 1.1rem;
+
+      ul {
+        list-style-type: none;
+
+        li {
+          margin-top: 15px;
+
+          i {
+            color: $main-color-light;
+          }
+
+          strong {
+            margin: 0px 10px;
+          }
+        }
+      }
+    }
+  }
+}

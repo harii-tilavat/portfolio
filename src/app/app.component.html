@@ -1,9 +1,9 @@
 <div class="portfolio-section">
-  <section class="sidebar">
+  <section class="sidebar" id="sidebar" #sidebar>
     <app-sidebar></app-sidebar>
   </section>
-  <section class="main-panel">
-    <app-hero></app-hero>
+  <section class="main-panel ">
+    <app-hero (sidebarEvent)="onSidebarChange($event)"></app-hero>
     <app-about></app-about>
     <app-skill></app-skill>
     <app-resume></app-resume>
