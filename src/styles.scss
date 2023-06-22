@@ -264,7 +264,8 @@ $poppin: 'Poppins', sans-serif;
     .progress {
       margin: 15px 0;
       height: 10px;
-      .progress-bar{
+
+      .progress-bar {
         background-color: $main-color-light;
       }
     }
@@ -272,7 +273,49 @@ $poppin: 'Poppins', sans-serif;
 }
 
 .resume {
+  color: $main-color;
   padding: 50px 0px;
+
+  .resume-content {
+    position: relative;
+
+    .resume-title {
+      margin: 15px 0px;
+
+    }
+    .resume-item {
+      margin-bottom: 25px;
+
+      .year {
+        padding: 5px 10px;
+        display: inline-block;
+        background-color: #e4edf9;
+        font-size: 16px;
+      }
+
+      border-left: 2px solid $main-color;
+
+      ul {
+        li {
+          margin: 10px 0px;
+        }
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      color: black;
+      padding-left: 15px;
+
+      .resume-sub-title {
+        font-family: $poppin;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
 
 // Media Query
