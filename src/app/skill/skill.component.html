@@ -12,61 +12,14 @@
     </div>
     <div class="skill-body">
       <div class="row">
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-12">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 " *ngFor="let item of skillList;">
           <div class="progress-content">
             <div class="progress-title">
-              <span>HTML</span>
-              <span>100%</span>
+              <span>{{item.label}} </span>
+              <span> {{item.per}} </span>
             </div>
             <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
-            </div>
-          </div>
-          <div class="progress-content">
-            <div class="progress-title">
-              <span>CCC</span>
-              <span>90%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 90%;"></div>
-            </div>
-          </div>
-          <div class="progress-content">
-            <div class="progress-title">
-              <span>Javascript</span>
-              <span>80%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-12">
-          <div class="progress-content">
-            <div class="progress-title">
-              <span>jQuery</span>
-              <span>60%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
-            </div>
-          </div>
-          <div class="progress-content">
-            <div class="progress-title">
-              <span>PHP</span>
-              <span>80%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 90%;"></div>
-            </div>
-          </div>
-          <div class="progress-content">
-            <div class="progress-title">
-              <span>Node Js</span>
-              <span>75%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
+              <div class="progress-bar" role="progressbar" [ngStyle]="{'width': item.per}"></div>
             </div>
           </div>
         </div>

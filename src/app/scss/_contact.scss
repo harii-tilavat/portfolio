@@ -1,0 +1,36 @@
+.contact {
+  // background-color: $light-grey;
+  padding: 50px 0;
+
+  .form-group {
+    margin-bottom: 25px;
+    .form-control {
+      background: transparent;
+      &:focus {
+        box-shadow: none;
+        border-color: $main-color-light;
+      }
+    }
+    .form-label {
+      span {
+        color: red;
+      }
+    }
+    .my-btn {
+      color: white;
+      background-color: $main-color-light;
+      &:hover {
+        background-color: #0081bd;
+      }
+    }
+  }
+  .error-message{
+    position: relative;
+    font-size: 14px;
+    .error{
+      right: 0;
+      position: absolute;
+      color: red;
+    }
+  }
+}

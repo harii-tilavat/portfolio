@@ -1,4 +1,6 @@
 .services {
+  padding: 50px 0;
+  background: $light-grey;
   .offer-title {
     font-weight: bold;
   }
@@ -6,6 +8,7 @@
     padding: 20px 0;
     .service-card {
       border-radius: 0 30px 0 0;
+      background: transparent;
       .icon-info {
         position: relative;
         .icon {

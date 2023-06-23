@@ -6,6 +6,7 @@ $main-color: #040b14;
 $main-color-light: #149ddd;
 $partition: 300px;
 $main-title: #173b6c;
+$light-grey: #f5f8fd;
 $poppin: "Poppins", sans-serif;
 
 .bg-primary {
@@ -62,7 +63,7 @@ $poppin: "Poppins", sans-serif;
     border-radius: 10px;
   }
 }
-.bar-btn{
+.bar-btn {
   display: none;
 }
 .sub-paragraph {
@@ -74,15 +75,16 @@ $poppin: "Poppins", sans-serif;
 @import "/src/app/scss/hero";
 @import "/src/app/scss/about";
 @import "/src/app/scss/facts";
-@import "/src/app/scss/skill.scss";
+@import "/src/app/scss/skill";
 @import "/src/app/scss/resume";
 @import "/src/app/scss/services";
+@import "/src/app/scss/contact";
 
 // Media Query
 
 @media only screen and (max-width: 1199px) {
   .bar-btn {
-    display: flex ;
+    display: flex;
   }
   .sidebar {
     transform: translateX(-300px);
