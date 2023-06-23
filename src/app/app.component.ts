@@ -17,4 +17,7 @@ export class AppComponent implements OnInit {
     console.log("Sidebar: ",this.sidebar);
     this.sidebar.nativeElement.classList.toggle('show');
   }
+  onHideSidebar():void{
+    this.sidebar.nativeElement.classList.remove('show')
+  }
 }

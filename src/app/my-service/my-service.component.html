@@ -1,0 +1,37 @@
+<section class="services">
+  <div class="container">
+    <div class="service-head">
+      <div class="title">
+        <span>Specilized in</span>
+      </div>
+      <div class="sub-paragraph">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat praesentium dolorem corrupti officia
+          mollitia aliquid aut maxime obcaecati dolores libero! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Ad, consequuntur.</p>
+      </div>
+    </div>
+    <div class="offers">
+      <div class="row">
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12  py-3" *ngFor="let item of serviceList; ">
+          <div class="service-card card p-4">
+            <div class="icon-info">
+              <div class="icon d-flex-center">
+                <span>
+                  <i [class]="item.icon"></i>
+                </span>
+              </div>
+            </div>
+            <div class="content mt-4">
+              <div class="offer-title">
+                <span>{{item.title}}</span>
+              </div>
+              <div class="desc">
+                <p>{{item.desc}} </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

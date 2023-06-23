@@ -1,6 +1,6 @@
 <section class="hero">
-  <div class="bar-btn">
-    <button class="" (click)="onToggle()"><i class="fa fa-bars"></i></button>
+  <div class="bar-btn ">
+    <button class="" (click)="onToggle()"><i [class]="!isDisplay?'fa fa-bars':'fa-solid fa-xmark'"></i></button>
   </div>
   <div class="header-title">
     <h1 class="hero-name">Alex Smith</h1>

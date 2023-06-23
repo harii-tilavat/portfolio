@@ -6,6 +6,7 @@
   overflow-y: auto;
   height: 100vh;
   transition: 0.2s;
+  z-index: 1000;
 
   .profile {
     text-align: center;

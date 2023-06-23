@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@import "node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
 $main-color: #040b14;
 $main-color-light: #149ddd;
@@ -23,8 +23,18 @@ $poppin: "Poppins", sans-serif;
 .text-primary-light {
   color: $main-color-light !important;
 }
-.show {
+.sidebar.show {
   transform: translateX(0) !important;
+}
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 // ---------------------------------------------------------------------------
 //portfolio
@@ -41,7 +51,7 @@ $poppin: "Poppins", sans-serif;
 .title {
   color: $main-title;
   font-size: 2.3rem;
-
+  font-weight: 500;
   &::after {
     content: "";
     display: block;
@@ -52,7 +62,9 @@ $poppin: "Poppins", sans-serif;
     border-radius: 10px;
   }
 }
-
+.bar-btn{
+  display: none;
+}
 .sub-paragraph {
   margin-top: 20px;
 }
@@ -69,6 +81,9 @@ $poppin: "Poppins", sans-serif;
 // Media Query
 
 @media only screen and (max-width: 1199px) {
+  .bar-btn {
+    display: flex ;
+  }
   .sidebar {
     transform: translateX(-300px);
   }
