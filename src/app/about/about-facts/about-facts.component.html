@@ -11,12 +11,12 @@
     <div class="fact-clients mt-5">
       <div class="row">
         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let item of clientsMenu">
-          <div class="fact-content p-3">
+          <div class="fact-content">
             <div class="icon">
               <i [class]="item.icon"></i>
             </div>
-            <div>
-              <span class="h1 fw-bold d-block">{{item.clientCount}}</span>
+            <div class="content-info d-flex flex-column">
+              <span class="h1  ">{{item.clientCount}}</span>
               <strong>{{item.feedback}}</strong>
               <p>{{item.desc}}</p>
             </div>

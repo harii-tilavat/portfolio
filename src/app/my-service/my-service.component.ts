@@ -10,39 +10,39 @@ export class MyServiceComponent implements OnInit{
   public serviceList:ServiceListModel[]=[
     {
       id:1,
-      title:'SEO',
+      title:'Angular Developer',
       icon:'fa-solid fa-signal',
-      desc:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, ab.consectetur adipisicing elit. Quisquam, ab.'
+      desc:'I have in-depth knowledge of Angular and Typescript, enabling me to build robust and scalable web applications.'
     },
     {
       id:2,
-      title:'Facebook Marketing',
+      title:'Web Development',
       icon:'fa-solid fa-magnifying-glass-chart',
-      desc:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, ab.consectetur adipisicing elit. Quisquam, ab.'
+      desc:'I possess a strong command of HTML, CSS, and JavaScript, allowing me to create visually appealing and interactive websites.'
     },
     {
       id:3,
-      title:'Youtube Marketing',
-      icon:'fa-solid fa-tv',
-      desc:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, ab.consectetur adipisicing elit. Quisquam, ab.'
+      title:'Responsive Web Design',
+      icon:'fa-solid fa-code',
+      desc:'I specialize in creating responsive designs using Media Queries that adapt beautifully to different screen sizes and devices.'
     },
     {
       id:4,
-      title:'Content Writing',
-      icon:'fa-solid fa-pencil',
-      desc:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, ab.consectetur adipisicing elit. Quisquam, ab.'
+      title:'Frameworks',
+      icon:'fa-solid fa-tv',
+      desc:"Whether it's jQuery, React, or Angular, I pride myself on writing clean and well-documented code that is maintainable and scalable in the long run."
     },
     {
       id:5,
-      title:'Web Design',
-      icon:'fa-solid fa-code',
-      desc:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, ab.consectetur adipisicing elit. Quisquam, ab.'
+      title:'Programming Languages',
+      icon:'fa-solid fa-pencil',
+      desc:'I have a good knowledge of C, C++, Java and with my logical mindset, I can quickly identify code and deliver high-quality and reliable solutions.'
     },
     {
       id:6,
       title:'Graphic Design',
       icon:'fa-solid fa-signal',
-      desc:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, ab.consectetur adipisicing elit. Quisquam, ab.'
+      desc:'Using Figma, I can create and iterate on design concepts, allowing for seamless collaboration and rapid design iteration.'
     },
   ];
   constructor(){}

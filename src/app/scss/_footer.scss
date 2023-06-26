@@ -1,0 +1,15 @@
+.footer{
+  .footer-content{
+    position: relative;
+    background-color: #040b14;
+    color: white;
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+    .footer-info{
+      text-align: center;
+      position: fixed;
+      bottom: 10px;
+    }
+  }
+}

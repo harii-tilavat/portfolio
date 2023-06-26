@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
         {
           id: 2,
           bioLabel: 'Website',
-          bioDetail: 'www.harittilavat.com',
+          bioDetail: 'hariitilavat.web.app',
         },
         {
           id: 3,

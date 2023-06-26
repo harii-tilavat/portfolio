@@ -1,6 +1,7 @@
 <div class="portfolio-section">
   <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
     <app-sidebar></app-sidebar>
+    <!-- <app-footer></app-footer> -->
   </section>
   <section class="main-panel ">
     <app-hero (sidebarEvent)="onSidebarChange($event)"></app-hero>
@@ -8,6 +9,7 @@
     <app-skill></app-skill>
     <app-resume></app-resume>
     <app-my-service></app-my-service>
+    <app-ask-project></app-ask-project>
     <app-contact></app-contact>
   </section>
 </div>

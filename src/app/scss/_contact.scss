@@ -1,17 +1,52 @@
 .contact {
   // background-color: $light-grey;
   padding: 50px 0;
+  .location-section {
+    .content {
+      .info {
+        display: flex;
+        margin-bottom: 1.5rem;
+        .icon {
+          transition: 0.3s;
+          height: 30px;
+          width: 30px;
+          background-color: #cff0ff;
+          border-radius: 50px;
+          color: $main-color-light;
+          padding: 25px;
+        }
+        &:hover {
+         .icon{
+          background-color: $main-color-light;
+          color: white;
+         }
+        }
+        .content-info {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+        }
+      }
+    }
+    .image-section {
+      .location-img{
+        max-width: 70%;
+      }
+    }
+  }
 
   .form-group {
     margin-bottom: 25px;
     .form-control {
       background: transparent;
+      border-radius: 0;
       &:focus {
         box-shadow: none;
         border-color: $main-color-light;
       }
     }
     .form-label {
+      font-weight: 500;
       span {
         color: red;
       }
@@ -19,15 +54,24 @@
     .my-btn {
       color: white;
       background-color: $main-color-light;
+      transition: 0.3s;
       &:hover {
         background-color: #0081bd;
       }
     }
+    .my-btn:active {
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.6);
+      transform: scale(1.1);
+    }
+    .my-btn:focus {
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.6);
+      // transform: scale(1.1);
+    }
   }
-  .error-message{
+  .error-message {
     position: relative;
     font-size: 14px;
-    .error{
+    .error {
       right: 0;
       position: absolute;
       color: red;

@@ -8,6 +8,7 @@ $partition: 300px;
 $main-title: #173b6c;
 $light-grey: #f5f8fd;
 $poppin: "Poppins", sans-serif;
+$p-color:#667085;
 
 .bg-primary {
   background-color: $main-color !important;
@@ -78,8 +79,9 @@ $poppin: "Poppins", sans-serif;
 @import "/src/app/scss/skill";
 @import "/src/app/scss/resume";
 @import "/src/app/scss/services";
+@import "/src/app/scss/ask-project";
 @import "/src/app/scss/contact";
-
+@import "/src/app/scss/footer";
 // Media Query
 
 @media only screen and (max-width: 1199px) {
@@ -87,7 +89,7 @@ $poppin: "Poppins", sans-serif;
     display: flex;
   }
   .sidebar {
-    transform: translateX(-300px);
+    transform: translateX(-$partition);
   }
 
   .portfolio-section {

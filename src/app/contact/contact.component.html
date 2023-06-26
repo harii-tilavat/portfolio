@@ -1,4 +1,4 @@
-<section class="contact">
+<section class="contact" id="contact">
   <div class="container">
     <div class="row">
       <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -7,18 +7,37 @@
             <span> Contact me</span>
           </div>
           <div class="sub-paragraph">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum fuga voluptas reprehenderit, dignissimos
-              laborum velit laboriosam saepe doloremque. Debitis, dolores autem saepe ut aperiam nulla, repellendus,
-              atque expedita ducimus quos inventore. Magnam, dicta dolorum.</p>
+            <p>  Thank you for taking the time to review my profile. If you have any inquiries, project proposals, or would simply like to connect, I would love to hear from you. Feel free to reach out using the contact information below, and I'll get back to you as soon as possible.</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row py-3">
       <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
-        <h1>Hello</h1>
+        <div class="location-section">
+          <div class="content">
+            <div class="info " *ngFor="let item of contactList">
+              <div class="icon d-flex-center ">
+                <span>
+                  <i [class]="item.icon"></i>
+                </span>
+              </div>
+              <div class="content-info">
+                <span class=" h5">{{item.label}} </span>
+                <span>{{item.desc}} </span>
+              </div>
+            </div>
+          </div>
+          <div class="image-section">
+            <div class="location-img">
+              <span>
+                <img src="/assets/svg/location.svg" alt="SVJ not found" class="img-fluid">
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 ">
+      <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 mt-lg-0 mt-5">
         <div class="contact-us">
           <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
@@ -51,21 +70,28 @@
               <label for="subject" class="form-label">Subject <span>*</span> </label>
               <input type="text" class="form-control" id="subject" formControlName="subject">
               <div class="error-message" *ngIf="contactForm.controls['subject'].touched || isSubmitted ">
-                <span class="error" *ngIf="contactForm.controls['subject'].errors?.['required']">Subject required!</span>
+                <span class="error" *ngIf="contactForm.controls['subject'].errors?.['required']">Subject
+                  required!</span>
               </div>
             </div>
             <div class="form-group">
               <label for="message" class="form-label">Message <span>*</span> </label>
-              <textarea name="" id="message" cols="30" rows="5" class="form-control"
-                formControlName="message"></textarea>
-                <div class="error-message" *ngIf="contactForm.controls['message'].touched || isSubmitted">
-                  <span class="error" *ngIf="contactForm.controls['message'].errors?.['required']">Message required!</span>
-                </div>
+              <textarea name="" id="message" rows="5" class="form-control" formControlName="message"></textarea>
+              <div class="error-message" *ngIf="contactForm.controls['message'].touched || isSubmitted">
+                <span class="error" *ngIf="contactForm.controls['message'].errors?.['required']">
+                  Message required!
+                </span>
+              </div>
             </div>
             <div class="form-group">
               <div class="form-submit d-flex-center">
-                <button type="submit" class="btn my-btn ">Submit</button>
-                <button type="reset" class="btn my-btn mx-3">Reset</button>
+                <button type="submit" class="btn my-btn submit" [disabled]="!contactForm.valid ">Submit</button>
+                <button type="reset" class="btn my-btn mx-3" (click)="onReset()">Reset</button>
+              </div>
+            </div>
+            <div class="form-group" *ngIf="clientName">
+              <div class="form-submit text-center">
+                <p>Thank you<span class="fw-bold"> {{clientName}}! </span> We will contact you as soon as Possible. </p>
               </div>
             </div>
           </form>

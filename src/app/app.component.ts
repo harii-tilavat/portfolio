@@ -6,7 +6,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
- @ViewChild('sidebar') sidebar!:ElementRef;
+  @ViewChild('sidebar') sidebar!: ElementRef;
   public title = 'portfolio';
 
   constructor() { }
@@ -14,10 +14,10 @@ export class AppComponent implements OnInit {
   }
   onSidebarChange(event: any) {
     console.log("Value of Event: ", event);
-    console.log("Sidebar: ",this.sidebar);
+    console.log("Sidebar: ", this.sidebar);
     this.sidebar.nativeElement.classList.toggle('show');
   }
-  onHideSidebar():void{
+  onHideSidebar(): void {
     this.sidebar.nativeElement.classList.remove('show')
   }
 }

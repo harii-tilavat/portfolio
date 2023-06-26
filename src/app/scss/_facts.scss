@@ -1,5 +1,12 @@
 .facts {
   .fact-clients {
+    .fact-content{
+      display: flex;
+      padding: 30px;
+      .content-info{
+        margin-left: 15px;
+      }
+    }
     i {
       color: $main-color-light;
     }
