@@ -1,4 +1,4 @@
-<div class="profile" >
+<div class="profile">
   <div class="profile-pic">
     <span class="profile-icon">
       <img src="/assets/profile-img/profile2.jpg" alt="">
@@ -8,17 +8,13 @@
     <h4 class="name">Alex Smith</h4>
   </div>
   <div class="profile-icons">
-    <i class="fa fa-brands fa-facebook"></i>
-    <i class="fa-brands fa-twitter"></i>
-    <i class="fa-brands fa-instagram"></i>
-    <i class="fa-brands fa-skype"></i>
-    <i class="fa-brands fa-linkedin-in"></i>
+    <a [href]="iconItem.url" target="_blank" class="social-links" *ngFor="let iconItem of iconList"><i [class]="'fa-brands '+iconItem.icon"></i></a>
   </div>
 </div>
 <div class="menu navbar">
   <ul>
     <li *ngFor="let item of sidebarMenu;let i=index">
-      <a [ngClass]="{'active': i===0}">
+      <a class="nav-link" [ngClass]="{'active': i+1===activeRouteId}" (click)="onRouting(i+1,item.routing)">
         <i [class]="item.className"></i>
         <span>{{item.label}}</span>
       </a>

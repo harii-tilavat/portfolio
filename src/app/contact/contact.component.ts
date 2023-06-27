@@ -19,13 +19,13 @@ export class ContactComponent implements OnInit, OnDestroy {
       id: 1,
       icon: 'fa-solid fa-map-location-dot',
       label: 'Location',
-      desc: '204, Lorem ipsum Dollar!ipsum Dollar!'
+      desc: 'Shekhpur, Velanja, Surat-Gujarat'
     },
     {
       id: 2,
       icon: 'fa-solid fa-envelope',
       label: 'Email',
-      desc: 'abc@gmail.com'
+      desc: 'harittilavat@gmail.com'
     },
     {
       id: 3,

@@ -1,6 +1,7 @@
 .contact {
   // background-color: $light-grey;
   padding: 50px 0;
+  color-scheme: dark;
   .location-section {
     .content {
       .info {
@@ -39,6 +40,7 @@
     margin-bottom: 25px;
     .form-control {
       background: transparent;
+      color: inherit;
       border-radius: 0;
       &:focus {
         box-shadow: none;

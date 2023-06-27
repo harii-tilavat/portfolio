@@ -40,9 +40,9 @@ export class MyServiceComponent implements OnInit{
     },
     {
       id:6,
-      title:'Graphic Design',
+      title:'Version Control System',
       icon:'fa-solid fa-signal',
-      desc:'Using Figma, I can create and iterate on design concepts, allowing for seamless collaboration and rapid design iteration.'
+      desc:'Utilized version control systems like Git to collaborate effectively with team members, track code changes, and ensure code integrity.'
     },
   ];
   constructor(){}

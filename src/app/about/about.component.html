@@ -1,56 +1,55 @@
-<section class="about">
-  <div class="container">
-    <div class="title-head">
-      <div class="title">
-        <span>About</span>
+<div class="container">
+  <div class="title-head">
+    <div class="title">
+      <span>About</span>
+    </div>
+  </div>
+  <div class="title-paragraph ">
+    <p class="sub-paragraph"> Hi, I'm <span class="fw-semibold">Harit Tilavat</span>, an experienced Angular developer
+      with a strong passion for creating interactive and user-friendly web applications. I have a solid understanding
+      of HTML, CSS, JavaScript, and TypeScript, allowing me to build robust and scalable solutions.</p>
+  </div>
+  <div class="title-content my-4">
+    <div class="row">
+      <div class="col-xxl-4 col-xl-4 col-lg-4  col-md-4 col-sm-12 my-2">
+        <span>
+          <img src="/assets/profile-img/profile1.jpg" alt="" class="img-fluid">
+        </span>
       </div>
-    </div>
-    <div class="title-paragraph ">
-      <p class="sub-paragraph"> Hi, I'm <span class="fw-semibold">Harit Tilavat</span>, an experienced Angular developer
-        with a strong passion for creating interactive and user-friendly web applications. I have a solid understanding
-        of HTML, CSS, JavaScript, and TypeScript, allowing me to build robust and scalable solutions.</p>
-    </div>
-    <div class="title-content my-4">
-      <div class="row">
-        <div class="col-xxl-4 col-xl-4 col-lg-4  col-md-4 col-sm-12 my-2">
-          <span>
-            <img src="/assets/profile-img/profile1.jpg" alt="" class="img-fluid">
-          </span>
+      <div class="col-xxl-8 col-xl-8 col-lg-8  col-12 my-2">
+        <div class="about-title">
+          <h3 >UI/UX Designer and Developer</h3>
         </div>
-        <div class="col-xxl-8 col-xl-8 col-lg-8  col-12 my-2">
-          <div class="about-title">
-            <h3 class="text-primary">UI/UX Designer and Developer</h3>
-          </div>
-          <div class="about-paragraph">
-            <p>
-              If you are looking for a dedicated UI/UX designer who can transform your ideas into visually stunning and
-              user-friendly interfaces, I'd love to discuss how I can contribute to your project's success. Let's work
-              together to create impactful experiences that leave a lasting impression.
-            </p>
-          </div>
-          <div class="about-bio">
-            <div class="row">
-              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" *ngFor="let item of bioList">
-                <div class="bio-content my-2">
-                  <ul class="m-0 p-0">
-                    <li *ngFor="let subItem of item.subMenu">
-                      <i class="fa fa-chevron-right"></i>
-                      <strong>{{subItem.bioLabel}}:</strong>
-                      <span>{{subItem.bioDetail}}</span>
-                    </li>
-                  </ul>
-                </div>
+        <div class="about-paragraph">
+          <p>
+            If you are looking for a dedicated UI/UX designer who can transform your ideas into visually stunning and
+            user-friendly interfaces, I'd love to discuss how I can contribute to your project's success. Let's work
+            together to create impactful experiences that leave a lasting impression.
+          </p>
+        </div>
+        <div class="about-bio">
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" *ngFor="let item of bioList">
+              <div class="bio-content my-2">
+                <ul class="m-0 p-0">
+                  <li *ngFor="let subItem of item.subMenu">
+                    <i class="fa fa-chevron-right"></i>
+                    <span class="bio-title">{{subItem.bioLabel}}:</span>
+                    <span>{{subItem.bioDetail}}</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="about-paragraph mt-3">
-            <p>
-              "Web development is my passion, my playground, and my endless source of curiosity. There's always something new to learn and explore."
-            </p>
-          </div>
+        </div>
+        <div class="about-paragraph mt-3">
+          <p>
+            "Web development is my passion, my playground, and my endless source of curiosity. There's always something
+            new to learn and explore."
+          </p>
         </div>
       </div>
     </div>
   </div>
   <app-about-facts></app-about-facts>
-</section>
+</div>

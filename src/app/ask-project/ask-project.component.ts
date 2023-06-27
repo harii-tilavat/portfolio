@@ -11,4 +11,7 @@ export class AskProjectComponent implements OnInit {
   ngOnInit():void{
 
   }
+  goToContact():void{
+    document.getElementById('contact')?.scrollIntoView();
+  }
 }

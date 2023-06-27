@@ -3,15 +3,27 @@
     <app-sidebar></app-sidebar>
     <!-- <app-footer></app-footer> -->
   </section>
-  <section class="main-panel ">
-    <app-hero (sidebarEvent)="onSidebarChange($event)"></app-hero>
-    <app-about></app-about>
-    <app-skill></app-skill>
-    <app-resume></app-resume>
-    <app-my-service></app-my-service>
-    <app-ask-project></app-ask-project>
-    <app-contact></app-contact>
+  <section class="main-panel">
+    <section id="hero" class="hero">
+      <app-hero (sidebarEvent)="onSidebarChange($event)"></app-hero>
+    </section>
+    <section id="about" class="about">
+      <app-about></app-about>
+    </section>
+    <section id="skill" class="skill">
+      <app-skill></app-skill>
+    </section>
+    <section id="resume" class="resume">
+      <app-resume></app-resume>
+    </section>
+    <section id="services" class="services">
+      <app-my-service></app-my-service>
+    </section>
+    <section id="ask-project" class="ask-project">
+      <app-ask-project></app-ask-project>
+    </section>
+    <section id="contact" class="contact">
+      <app-contact></app-contact>
+    </section>
   </section>
 </div>
-
-

@@ -11,25 +11,25 @@ export class AboutFactsComponent implements OnInit {
       icon:'fa fa-regular fa-smile fa-3x',
       clientCount:32,
       feedback:'Happy Clients',
-      desc:'Lorem ipsum dolor sit amet.'
+      desc:'I had a wonderful experience working with my clients'
     },
     {
       icon:'fa-solid fa-history fa-3x',
-      clientCount:12,
+      clientCount:'12+',
       feedback:'Projects',
-      desc:'Lorem ipsum dolor sit amet.'
+      desc:'I have created more than 12 Projects!'
     },
     {
       icon:'fa fa-headphones fa-3x',
       clientCount:'24/7',
       feedback:'Hours of Support',
-      desc:'Lorem ipsum dolor sit amet.'
+      desc:'Committed to delivering customer service with 24/7 availability'
     },
     {
       icon:'fa-solid fa-people-group fa-3x',
       clientCount:7,
-      feedback:'Hard Workers',
-      desc:'Lorem ipsum dolor sit amet.'
+      feedback:'Team member',
+      desc:'Consistently goes above and beyond expectations.'
     },
   ]
   constructor(){}
