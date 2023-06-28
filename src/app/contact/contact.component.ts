@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit, OnDestroy {
       id: 2,
       icon: 'fa-solid fa-envelope',
       label: 'Email',
-      desc: 'harittilavat@gmail.com'
+      desc: 'harittilavat10@gmail.com'
     },
     {
       id: 3,

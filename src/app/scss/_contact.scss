@@ -39,7 +39,7 @@
   .form-group {
     margin-bottom: 25px;
     .form-control {
-      background: transparent;
+      // background: transparent;
       color: inherit;
       border-radius: 0;
       &:focus {
@@ -59,6 +59,7 @@
       transition: 0.3s;
       &:hover {
         background-color: #0081bd;
+        box-shadow: 3px 3px rgba(0, 0, 0, 0.6);
       }
     }
     .my-btn:active {

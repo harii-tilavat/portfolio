@@ -15,4 +15,7 @@ export class HeroComponent implements OnInit {
     this.isDisplay=!this.isDisplay;
     this.sidebarEvent.emit(this.isDisplay);
   }
+  onClickTop():void{
+    document.getElementById('hero')?.scrollIntoView();
+  }
 }

@@ -51,16 +51,16 @@ export class SidebarComponent implements OnInit {
     },
     {
       id: 3,
-      label: 'Resume',
-      routing: 'resume',
-      className: 'fa-solid fa-file',
+      label: 'Skills',
+      routing: 'skill',
+      className: 'fa-solid fa-envelope',
       subMenu: []
     },
     {
       id: 4,
-      label: 'Portfolio',
-      routing: 'portfolio',
-      className: 'fa-solid fa-envelope',
+      label: 'Resume',
+      routing: 'resume',
+      className: 'fa-solid fa-file',
       subMenu: []
     },
     {

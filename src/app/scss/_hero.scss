@@ -1,7 +1,9 @@
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("/assets/img/hero-bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("/assets/profile-img/hero-bg.jpg");
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
   color: white;
   display: flex;
@@ -26,6 +28,7 @@
     }
   }
 
+
   .header-title {
     font-family: $poppin;
     .hero-name {
@@ -41,5 +44,39 @@
         letter-spacing: 1px;
       }
     }
+  }
+  .home-btn{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 50px;
+    background: $main-color-light;
+    z-index: 1001;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    animation-name: slowUpAnimation;
+    animation-duration: 2s; /* Adjust the duration as needed */
+    animation-timing-function: ease-in-out; /* Adjust the timing function for a smoother effect */
+    animation-iteration-count: infinite; /* Repeat the animation indefinitely */
+    button {
+      color: white;
+      background-color: #149ddd;
+      border: none;
+    }
+  }
+}
+@keyframes slowUpAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
