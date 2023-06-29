@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SidebarService } from '../_services/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-hero',
@@ -8,8 +9,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeroComponent implements OnInit {
   @Output() sidebarEvent = new EventEmitter<boolean>();
   public isDisplay:boolean=false;
-  constructor() { }
+  constructor(private sidebarService:SidebarService) { }
   ngOnInit(): void {
+    this.sidebarService.sidebarChanges.subscribe({
+      next:(isDisplay:boolean)=>{
+        console.log("Response: ", isDisplay);
+        this.isDisplay=!isDisplay;
+      }
+    })
   }
   onToggle():void{
     this.isDisplay=!this.isDisplay;
