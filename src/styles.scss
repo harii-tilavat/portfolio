@@ -71,7 +71,7 @@ $p-color:#667085;
   margin-top: 20px;
 }
 
-//Sidebar
+
 @import "/src/app/scss/sidebar";
 @import "/src/app/scss/hero";
 @import "/src/app/scss/about";
@@ -82,6 +82,7 @@ $p-color:#667085;
 @import "/src/app/scss/ask-project";
 @import "/src/app/scss/contact";
 @import "/src/app/scss/footer";
+@import "/src/app/scss/loader";
 // Media Query
 
 @media only screen and (max-width: 1199px) {

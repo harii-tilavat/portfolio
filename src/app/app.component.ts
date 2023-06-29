@@ -10,12 +10,16 @@ export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;
   public title = 'portfolio';
   public isDisplay!:boolean;
-  constructor(private sidebarService:SidebarService) { }
+  public isLoading:boolean=false;
+  constructor(private sidebarService:SidebarService) {
+  }
   ngOnInit(): void {
+    this.isLoading=true;
+    setTimeout(()=>{
+      this.isLoading=false;
+    },2400);
   }
   onSidebarChange(event: any) {
-    console.log("Value of Event: ", event);
-    console.log("Sidebar: ", this.sidebar);
     this.isDisplay=event;
     this.sidebar.nativeElement.classList.toggle('show');
   }

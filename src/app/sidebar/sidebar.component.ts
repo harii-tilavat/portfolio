@@ -83,9 +83,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
   onRouting(index: number, routingValue: string) {
-    console.log("Value is: ", routingValue);
     document.getElementById(routingValue)?.scrollIntoView();
     this.activeRouteId = index;
-    console.log(this.activeRouteId);
   }
 }

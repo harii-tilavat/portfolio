@@ -1,32 +1,37 @@
-<div class="portfolio-section">
-  <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
-    <app-sidebar></app-sidebar>
-    <!-- <app-footer></app-footer> -->
-  </section>
-  <section class="main-panel">
-    <section id="hero" class="hero">
-      <app-hero (sidebarEvent)="onSidebarChange($event)"></app-hero>
+<ng-container *ngIf="!isLoading; else loading">
+  <div class="portfolio-section">
+    <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
+      <app-sidebar></app-sidebar>
     </section>
-    <section id="about" class="about">
-      <app-about></app-about>
+    <section class="main-panel">
+      <section id="hero" class="hero">
+        <app-hero (sidebarEvent)="onSidebarChange($event)"></app-hero>
+      </section>
+      <section id="about" class="about">
+        <app-about></app-about>
+      </section>
+      <section id="skill" class="skill">
+        <app-skill></app-skill>
+      </section>
+      <section id="resume" class="resume">
+        <app-resume></app-resume>
+      </section>
+      <section id="services" class="services">
+        <app-my-service></app-my-service>
+      </section>
+      <section id="ask-project" class="ask-project">
+        <app-ask-project></app-ask-project>
+      </section>
+      <section id="contact" class="contact">
+        <app-contact></app-contact>
+      </section>
+      <section id="footer" class="footer">
+        <app-footer></app-footer>
+      </section>
     </section>
-    <section id="skill" class="skill">
-      <app-skill></app-skill>
-    </section>
-    <section id="resume" class="resume">
-      <app-resume></app-resume>
-    </section>
-    <section id="services" class="services">
-      <app-my-service></app-my-service>
-    </section>
-    <section id="ask-project" class="ask-project">
-      <app-ask-project></app-ask-project>
-    </section>
-    <section id="contact" class="contact">
-      <app-contact></app-contact>
-    </section>
-    <section id="footer" class="footer">
-      <app-footer></app-footer>
-    </section>
-  </section>
-</div>
+  </div>
+
+</ng-container>
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

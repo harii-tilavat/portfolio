@@ -16,6 +16,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AskProjectComponent } from './ask-project/ask-project.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { LoaderComponent } from './loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { FooterComponent } from './footer/footer.component';
     ContactComponent,
     AskProjectComponent,
     FooterComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

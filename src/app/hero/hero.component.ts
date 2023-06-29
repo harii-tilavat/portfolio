@@ -13,7 +13,6 @@ export class HeroComponent implements OnInit {
   ngOnInit(): void {
     this.sidebarService.sidebarChanges.subscribe({
       next:(isDisplay:boolean)=>{
-        console.log("Response: ", isDisplay);
         this.isDisplay=!isDisplay;
       }
     })
