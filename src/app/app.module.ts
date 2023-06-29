@@ -13,7 +13,10 @@ import { SkillComponent } from './skill/skill.component';
 import { MyServiceComponent } from './my-service/my-service.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
+import { AskProjectComponent } from './ask-project/ask-project.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import { LoaderComponent } from './loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +28,15 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     SkillComponent,
     MyServiceComponent,
     ContactComponent,
+    AskProjectComponent,
+    FooterComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

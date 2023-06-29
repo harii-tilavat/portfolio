@@ -9,27 +9,27 @@ export class AboutFactsComponent implements OnInit {
   public clientsMenu=[
     {
       icon:'fa fa-regular fa-smile fa-3x',
-      clientCount:232,
+      clientCount:32,
       feedback:'Happy Clients',
-      desc:'Lorem ipsum dolor sit amet.'
+      desc:'I had a wonderful experience working with my clients'
     },
     {
       icon:'fa-solid fa-history fa-3x',
-      clientCount:551,
+      clientCount:'12+',
       feedback:'Projects',
-      desc:'Lorem ipsum dolor sit amet.'
+      desc:'I have created more than 12 Projects!'
     },
     {
       icon:'fa fa-headphones fa-3x',
-      clientCount:1453,
+      clientCount:'24/7',
       feedback:'Hours of Support',
-      desc:'Lorem ipsum dolor sit amet.'
+      desc:'Committed to delivering customer service with 24/7 availability'
     },
     {
       icon:'fa-solid fa-people-group fa-3x',
-      clientCount:32,
-      feedback:'Hard Workers',
-      desc:'Lorem ipsum dolor sit amet.'
+      clientCount:7,
+      feedback:'Team member',
+      desc:'Consistently goes above and beyond expectations.'
     },
   ]
   constructor(){}
