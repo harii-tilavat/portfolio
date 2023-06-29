@@ -1,5 +1,5 @@
 .loader {
-  background: #222;
+  background: #111;
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   ul {
@@ -46,8 +46,9 @@
     display: inline-block;
     list-style-type: none;
     color: #484848;
-    font-size: 9vw;
+    font-size: 7vw;
     letter-spacing: 15px;
+    transition: 0.3s;
     margin-bottom: 15px;
     animation: flash 1.2s linear infinite;
   }
@@ -57,13 +58,23 @@
   0% {
     color: #484848;
     text-shadow: none;
+    transform: scale(1);
   }
   90% {
     color: #484848;
     text-shadow: none;
+    transform: scale(1);
   }
   100% {
     color: #00ccff;
     text-shadow: 0 0 8px #00ffff, 0 0 50px $main-color-light;
+    transform: scale(1.2);
+  }
+}
+@media only screen and (max-width:576px){
+  .loader {
+    ul li {
+      font-size: 5.5vw;
+    }
   }
 }

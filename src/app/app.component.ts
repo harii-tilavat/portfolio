@@ -27,4 +27,7 @@ export class AppComponent implements OnInit {
     this.sidebar.nativeElement.classList.remove('show');
     this.sidebarService.sidebarChanges.next(this.isDisplay);
   }
+  onLoad():void{
+    console.log("Loading! ");
+  }
 }

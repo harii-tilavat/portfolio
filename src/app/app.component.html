@@ -1,5 +1,8 @@
-<ng-container *ngIf="!isLoading; else loading">
-  <div class="portfolio-section">
+<ng-container *ngIf="isLoading">
+  <app-loader></app-loader>
+</ng-container>
+<ng-container >
+  <div class="portfolio-section" [ngClass]="{'d-none': isLoading}" (load)="onLoad()">
     <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
       <app-sidebar></app-sidebar>
     </section>
@@ -32,6 +35,3 @@
   </div>
 
 </ng-container>
-<ng-template #loading>
-  <app-loader></app-loader>
-</ng-template>

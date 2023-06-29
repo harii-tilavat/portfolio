@@ -47,6 +47,9 @@
         border-color: $main-color-light;
       }
     }
+    .form-contro:-internal-autofill-selected {
+      background-color: red !important;
+    }
     .form-label {
       font-weight: 500;
       span {

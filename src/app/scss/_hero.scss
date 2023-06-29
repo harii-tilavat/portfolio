@@ -11,6 +11,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  .hero-header{
+    .hire-me{
+      background-color: white;
+      // background: transparent;
+
+      box-shadow: 0 0 10px $main-color-light;
+      color: black;
+    }
+  }
   .bar-btn {
     position: fixed;
     right: 15px;
