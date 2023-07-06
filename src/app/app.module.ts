@@ -17,6 +17,7 @@ import { AskProjectComponent } from './ask-project/ask-project.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
+import { ScrollSpyDirective } from './_directives/scrollspy.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +32,13 @@ import { LoaderComponent } from './loader/loader.component';
     AskProjectComponent,
     FooterComponent,
     LoaderComponent,
+    ScrollSpyDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

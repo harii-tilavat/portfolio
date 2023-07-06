@@ -1,32 +1,35 @@
-<ng-container *ngIf="isLoading">
+<!-- <ng-container *ngIf="isLoading">
   <app-loader></app-loader>
-</ng-container>
+</ng-container> -->
 <ng-container >
   <div class="portfolio-section" [ngClass]="{'d-none': isLoading}" (load)="onLoad()">
     <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
       <app-sidebar></app-sidebar>
     </section>
     <section class="main-panel">
-      <section id="hero" class="hero">
+      <section id="hero" class="section hero">
         <app-hero (sidebarEvent)="onSidebarChange($event)"></app-hero>
       </section>
-      <section id="about" class="about">
+      <section id="about" class="section about">
         <app-about></app-about>
       </section>
-      <section id="skill" class="skill">
+      <section id="skill" class="section skill">
         <app-skill></app-skill>
       </section>
-      <section id="resume" class="resume">
+      <section id="resume" class="section resume">
         <app-resume></app-resume>
       </section>
-      <section id="services" class="services">
+      <section id="services" class="section services">
         <app-my-service></app-my-service>
       </section>
-      <section id="ask-project" class="ask-project">
+      <section id="ask-project" class="section ask-project">
         <app-ask-project></app-ask-project>
       </section>
-      <section id="contact" class="contact">
+      <section id="contact" class="section contact">
         <app-contact></app-contact>
+      </section>
+      <section id="add-comments" class="section add-comments">
+        <!-- <app-add-comments></app-add-comments> -->
       </section>
       <section id="footer" class="footer">
         <app-footer></app-footer>

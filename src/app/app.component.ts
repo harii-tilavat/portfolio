@@ -14,10 +14,10 @@ export class AppComponent implements OnInit {
   constructor(private sidebarService:SidebarService) {
   }
   ngOnInit(): void {
-    this.isLoading=true;
-    setTimeout(()=>{
-      this.isLoading=false;
-    },2400);
+    // this.isLoading=true;
+    // setTimeout(()=>{
+    //   this.isLoading=false;
+    // },2400);
   }
   onSidebarChange(event: any) {
     this.isDisplay=event;
