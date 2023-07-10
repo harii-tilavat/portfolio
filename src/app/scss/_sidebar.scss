@@ -66,7 +66,7 @@
 
       li {
         .nav-link {
-          padding: 20px 80px 10px 10px;
+          padding: 15px 50px 15px 15px;
           transition: 0.2s;
           display: flex;
           align-items: center;
@@ -76,7 +76,11 @@
           opacity: 0.6;
           text-decoration: none;
           cursor: pointer;
-
+          &:hover {
+            color: $main-color-light;
+            opacity: 1;
+            transform: translateX(10px);
+          }
           i {
             padding-right: 5px;
             font-size: 1.2rem;
@@ -87,16 +91,23 @@
             display: inline-block;
           }
         }
-
-        a:hover,
-        .active {
-          color: white;
+        .nav-link.active,.nav-link.active.login {
+          color: $main-color-light;
           opacity: 1;
         }
+        .nav-link.login {
+          box-shadow: 0px 0px 10px #f0f0f0;
+          background: transparent;
+          border-radius: 9px;
+          background: #f0f0f0;
+          color: $main-color;
+          opacity: 0.9;
 
-        a:hover,
-        .active > i {
-          color: $main-color-light;
+          font-weight: 700;
+          &:hover {
+            box-shadow: 0px 0px 15px white;
+            color: $main-color-light;
+          }
         }
       }
     }

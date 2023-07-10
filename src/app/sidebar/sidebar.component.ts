@@ -40,42 +40,42 @@ export class SidebarComponent implements OnInit {
       label: 'Home',
       routing: 'hero',
       className: 'fa-solid fa-house',
-      subMenu: []
     },
     {
       id: 2,
       label: 'About',
       routing: 'about',
       className: 'fa-solid fa-user',
-      subMenu: []
     },
     {
       id: 3,
       label: 'Skills',
       routing: 'skill',
       className: 'fa-solid fa-envelope',
-      subMenu: []
     },
     {
       id: 4,
       label: 'Resume',
       routing: 'resume',
       className: 'fa-solid fa-file',
-      subMenu: []
     },
     {
       id: 5,
       label: 'Service',
       routing: 'services',
       className: 'fa-solid fa-server',
-      subMenu: []
     },
     {
       id: 5,
       label: 'Contact',
       routing: 'contact',
       className: 'fa-solid fa-phone',
-      subMenu: []
+    },
+    {
+      id: 6,
+      label: 'Login',
+      routing: '/auth',
+      className: 'fa-solid fa-right-to-bracket',
     },
 
   ]

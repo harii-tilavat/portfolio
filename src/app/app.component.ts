@@ -8,23 +8,20 @@ import { SidebarService } from './_services/sidebar/sidebar.service';
 })
 export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;
-  public title = 'portfolio';
-  public isDisplay!:boolean;
   public isLoading:boolean=false;
-  constructor(private sidebarService:SidebarService) {
-  }
+  public isDisplay!:boolean;
+  constructor(private sidebarService:SidebarService) { }
   ngOnInit(): void {
-    // this.isLoading=true;
-    // setTimeout(()=>{
-    //   this.isLoading=false;
-    // },2400);
   }
-  onSidebarChange(event: any) {
-    this.isDisplay=event;
+
+  onToggle():void{
+    this.isDisplay=!this.isDisplay;
     this.sidebar.nativeElement.classList.toggle('show');
+    // this.sidebarEvent.emit(this.isDisplay);
   }
   onHideSidebar(): void {
     this.sidebar.nativeElement.classList.remove('show');
+    this.isDisplay=false;
     this.sidebarService.sidebarChanges.next(this.isDisplay);
   }
   onLoad():void{

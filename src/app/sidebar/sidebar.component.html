@@ -14,7 +14,7 @@
 <div class="menu navbar">
   <ul>
     <li *ngFor="let item of sidebarMenu;let i=index">
-      <a AppScrollSpy class="nav-link" [ngClass]="{'active': i+1===activeRouteId}" (click)="onRouting(i+1,item.routing)">
+      <a class="nav-link" [routerLink]="item.routing" [ngClass]="{'active': i+1===activeRouteId, 'login':item.label==='Login'}" (click)="onRouting(i+1,item.routing)">
         <i [class]="item.className"></i>
         <span>{{item.label}}</span>
       </a>

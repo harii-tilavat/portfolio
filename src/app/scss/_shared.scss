@@ -1,0 +1,23 @@
+a{
+  cursor: pointer;
+}
+.form-group{
+  margin-bottom: 15px;
+}
+.bar-btn {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  border-radius: 50px;
+  background: $main-color-light;
+  z-index: 1001;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  button {
+    color: white;
+    background-color: #149ddd;
+    border: none;
+  }
+}

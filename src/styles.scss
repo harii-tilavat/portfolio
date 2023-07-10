@@ -37,6 +37,7 @@ $p-color:#667085;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 // ---------------------------------------------------------------------------
 //portfolio
@@ -83,6 +84,8 @@ $p-color:#667085;
 @import "/src/app/scss/contact";
 @import "/src/app/scss/footer";
 @import "/src/app/scss/loader";
+@import "/src/app/scss/auth/auth-login";
+@import "/src/app/scss/shared";
 // Media Query
 
 @media only screen and (max-width: 1199px) {
