@@ -1,5 +1,4 @@
 .contact {
-  // background-color: $light-grey;
   padding: 50px 0;
   color-scheme: dark;
   .location-section {
@@ -74,13 +73,5 @@
       // transform: scale(1.1);
     }
   }
-  .error-message {
-    position: relative;
-    font-size: 14px;
-    .error {
-      right: 0;
-      position: absolute;
-      color: red;
-    }
-  }
+
 }

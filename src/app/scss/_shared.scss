@@ -1,6 +1,15 @@
 a{
   cursor: pointer;
 }
+.error-message {
+  position: relative;
+  font-size: 12px;
+  .error {
+    right: 0;
+    position: absolute;
+    color: red;
+  }
+}
 .form-group{
   margin-bottom: 15px;
 }

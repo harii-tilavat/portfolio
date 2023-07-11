@@ -15,12 +15,20 @@
                   <div class="form-group">
                     <label for="email" class="form-label">Enter Email</label>
                     <input type="text" class="form-control" id="email" formControlName="email">
+                    <div class="error-message" *ngIf="authForm.controls['email'].touched">
+                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['required']">Email Required!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['email']">Invalid Email!</span>
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="current-password" class="form-label">Enter Password</label>
                     <input type="password" class="form-control" id="current-password" formControlName="password">
+                    <div class="error-message" *ngIf="authForm.controls['password'].touched">
+                      <span class="error text-danger" *ngIf="authForm.controls['password'].errors?.['required']">Password Required!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['password'].errors?.['minlength']">Weak Password!</span>
+                    </div>
                   </div>
-                  <div class="form-group d-flex-between">
+                  <div class="form-group d-flex-between mt-4">
                     <div class="check-btn">
                       <input type="checkbox" class="form-check-input">
                       <label for="remember" class="form-check-label remember ms-2"> Remember me</label>
@@ -36,7 +44,7 @@
                   </div>
                   <div class="form-group" *ngIf="loginMode">
                     <div class="google-logo">
-                      <button type="submit" class="btn border form-control auth-btn">
+                      <button type="button" class="btn border form-control auth-btn">
                         <div class="google-svg">
                           <span>
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
