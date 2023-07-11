@@ -22,6 +22,7 @@ import { ScrollSpyDirective } from './_directives/scrollspy.directive';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    // StoreModule.forRoot({auth})
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,9 @@
   height: calc(100vh - 65px);
   overflow: scroll;
   color: $main-color;
+  a{
+    color: inherit;
+  }
   .auth-login {
     height: 100%;
     .login-section {
@@ -12,6 +15,10 @@
         border-radius: 10px;
         .forgot-pass {
           text-decoration: underline;
+        }
+        .submit-btn{
+          background-color: $main-color;
+          color: white;
         }
         .google-logo {
           .auth-btn {

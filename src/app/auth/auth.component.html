@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
           <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-12">
             <div class="login-form p-sm-5 p-4">
-              <form action="">
+              <form action="" [formGroup]="authForm" (ngSubmit)="onSubmit()">
                 <div class="form-head text-center">
                   <p class="h6"><i class="fa-solid fa-3x fa-right-to-bracket"></i></p>
                   <p class="h1">{{loginMode?'Login Here':'Sign up Here'}}</p>
@@ -14,11 +14,11 @@
                 <div class="form-body">
                   <div class="form-group">
                     <label for="email" class="form-label">Enter Email</label>
-                    <input type="text" class="form-control" id="email">
+                    <input type="text" class="form-control" id="email" formControlName="email">
                   </div>
                   <div class="form-group">
                     <label for="current-password" class="form-label">Enter Password</label>
-                    <input type="password" class="form-control" id="current-password">
+                    <input type="password" class="form-control" id="current-password" formControlName="password">
                   </div>
                   <div class="form-group d-flex-between">
                     <div class="check-btn">
@@ -30,8 +30,8 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="submit-btn">
-                      <button type="submit" class="btn form-control">{{loginMode?'Login':'Sign up'}}</button>
+                    <div class="submit">
+                      <button type="submit" class="btn submit-btn form-control" type="submit">{{loginMode?'Login':'Sign up'}}</button>
                     </div>
                   </div>
                   <div class="form-group" *ngIf="loginMode">
@@ -67,7 +67,7 @@
                   </div>
                   <div class="form-group text-center">
                     <p (click)="onChangeMode()">
-                      {{loginMode?"Don't have":"Have"}} an account ? <a class=""> {{loginMode?"Sign up":"Login"}}</a>
+                      {{loginMode?"Don't have":"Have"}} an account ? <a class="auth-mode" > {{loginMode?"Sign up":"Login"}}</a>
                     </p>
                   </div>
                 </div>
