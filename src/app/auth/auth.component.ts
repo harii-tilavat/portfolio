@@ -5,7 +5,9 @@ import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { AuthService } from '../_services';
 import { Observable, Subscription } from 'rxjs';
 import { AuthResponseModel } from '../_model';
-
+import * as fromApp from 'src/app/store/app.reducer';
+import * as AuthActions from './store/auth.actions';
+import { Store, StoreModule } from '@ngrx/store';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -18,7 +20,7 @@ export class AuthComponent implements OnInit {
   public authForm!: FormGroup;
   public isSubmitted = false;
   public authObs!: Observable<AuthResponseModel>;
-  constructor(private route: ActivatedRoute, private http: HttpClient, private authService: AuthService) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private authService: AuthService, private store: Store<fromApp.AppState>) { }
   ngOnInit(): void {
     this.authForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
@@ -26,13 +28,6 @@ export class AuthComponent implements OnInit {
     })
     const result = Math.random().toString(36).toUpperCase().substring(2, 7);
     this.captchaCode = result;
-    // console.log(this.captchaCode);
-    this.authService.isAuthenticated.subscribe({
-      next: (isAuth: boolean) => {
-        debugger;
-        console.log("Auth: ", isAuth);
-      }
-    })
   }
   onChangeMode(): void {
     this.loginMode = !this.loginMode;
@@ -44,19 +39,14 @@ export class AuthComponent implements OnInit {
     }
     else {
       if (this.loginMode) {
-        this.authObs = this.authService.authLogin({ email: this.authForm.value.email, password: this.authForm.value.password });
+        // this.authObs = this.authService.authLogin({ email: this.authForm.value.email, password: this.authForm.value.password });
+        this.store.dispatch(AuthActions.loginStart({ email: this.authForm.value.email, password: this.authForm.value.password }));
       }
       else {
-        this.authObs = this.authService.authSignup({ email: this.authForm.value.email, password: this.authForm.value.password });
+        this.store.dispatch(AuthActions.signupStart({email: this.authForm.value.email, password: this.authForm.value.password }))
+        // this.authObs = this.authService.authSignup({ email: this.authForm.value.email, password: this.authForm.value.password });
       }
     }
-    // this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBcGsyoxC-sGzaTVFfL2RO6oirbEJizzcY',this.authForm.value).subscribe({
-    //   next:(res)=>{
-    //     console.log("Response: ", res);
-    //   }
-    // });
-
-
     // Signin ------------ https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
     // Signup ------------ https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
   }

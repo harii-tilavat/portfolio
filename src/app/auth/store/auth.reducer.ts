@@ -1,20 +1,53 @@
 import { createReducer, on } from "@ngrx/store"
 import * as AuthActions from "./auth.actions";
-export interface State{
-  // AIzaSyBcGsyoxC-sGzaTVFfL2RO6oirbEJizzcY           ------------API KEY
-  authError:string|null,
-  loading:boolean
+import { User } from "src/app/_model";
+export interface State {
+  user: User | null;
+  authError: string | null;
+  loading: boolean;
 }
-const initialState:State={
+const initialState: State = {
   authError: null,
-  loading: false
+  loading: false,
+  user: null
 }
-export const authReducer=createReducer(
+export const authReducer = createReducer(
   initialState,
-  on(AuthActions.authLogin,(state,action)=>{
+  on(AuthActions.authenticateSuccess, (state,action)=>{
+    const user=new User(action.email,action.userId,action.token,action.expirationDate);
     debugger;
     return{
-      ...state
+      ...state,
+      user: user,
+      loading:false
     }
-  })
+  }),
+  on(AuthActions.loginStart, (state, action) => {
+    return {
+      ...state,
+      authError:null,
+      loading:true
+    }
+  }),
+  on(AuthActions.signupStart, (state,action)=>{
+    debugger;
+    return{
+      ...state,
+      authError:null,
+      loading:true
+    }
+  }),
+  on(AuthActions.authenticateFail, (state,action)=>{
+    return{
+      ...state,
+      authError:action.message,
+      loading:false
+    }
+  }),
+  on(AuthActions.logout, (state, action) => {
+    return {
+      ...state,
+      user: null,
+    }
+  }),
 );

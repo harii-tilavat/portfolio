@@ -9,6 +9,11 @@ import { HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ScrollSpyDirective } from './_directives/scrollspy.directive';
+import * as fromApp from 'src/app/store/app.reducer';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './auth/store/auth.effects';
+import { environment } from 'src/environments/environment.development';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +27,8 @@ import { ScrollSpyDirective } from './_directives/scrollspy.directive';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // StoreModule.forRoot({auth})
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot(AuthEffects)
   ],
   providers: [],
   bootstrap: [AppComponent]
