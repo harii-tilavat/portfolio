@@ -71,8 +71,11 @@ $p-color:#667085;
 .sub-paragraph {
   margin-top: 20px;
 }
-
-
+.dark-theme{
+  background-color: black !important;
+  color: white !important;
+  transition: 0.3s;
+}
 @import "/src/app/scss/sidebar";
 @import "/src/app/scss/hero";
 @import "/src/app/scss/about";

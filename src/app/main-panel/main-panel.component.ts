@@ -17,7 +17,6 @@ export class MainPanelComponent implements OnInit {
   }
   onSidebarChange(event: any) {
     this.isDisplay=event;
-    console.log("Display: ", this.isDisplay);
   }
 
 

@@ -8,6 +8,7 @@ import { AuthResponseModel } from '../_model';
 import * as fromApp from 'src/app/store/app.reducer';
 import * as AuthActions from './store/auth.actions';
 import { Store, StoreModule } from '@ngrx/store';
+import { State } from './store/auth.reducer';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -16,10 +17,13 @@ import { Store, StoreModule } from '@ngrx/store';
 })
 export class AuthComponent implements OnInit {
   public captchaCode!: string;
-  public loginMode = false;
+  public loginMode = true;
   public authForm!: FormGroup;
   public isSubmitted = false;
   public authObs!: Observable<AuthResponseModel>;
+  public isLoading:boolean=false;
+  public  error!:string | null;
+  public storeSub!:Subscription;
   constructor(private route: ActivatedRoute, private http: HttpClient, private authService: AuthService, private store: Store<fromApp.AppState>) { }
   ngOnInit(): void {
     this.authForm = new FormGroup({
@@ -28,6 +32,12 @@ export class AuthComponent implements OnInit {
     })
     const result = Math.random().toString(36).toUpperCase().substring(2, 7);
     this.captchaCode = result;
+    this.storeSub = this.store.select('auth').subscribe({
+      next: (authState: State) => {
+        this.isLoading = authState.loading;
+        this.error = authState.authError;
+      }
+    })
   }
   onChangeMode(): void {
     this.loginMode = !this.loginMode;
@@ -43,11 +53,15 @@ export class AuthComponent implements OnInit {
         this.store.dispatch(AuthActions.loginStart({ email: this.authForm.value.email, password: this.authForm.value.password }));
       }
       else {
-        this.store.dispatch(AuthActions.signupStart({email: this.authForm.value.email, password: this.authForm.value.password }))
+        this.store.dispatch(AuthActions.signupStart({ email: this.authForm.value.email, password: this.authForm.value.password }))
         // this.authObs = this.authService.authSignup({ email: this.authForm.value.email, password: this.authForm.value.password });
       }
+      this.resetForm();
     }
     // Signin ------------ https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
     // Signup ------------ https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
+  }
+  resetForm(): void {
+    this.authForm.reset();
   }
 }

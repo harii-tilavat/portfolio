@@ -8,3 +8,9 @@ export class User {
     }
   }
 }
+export class UserModel{
+  public email!: string;
+  public id!: string;
+  public _token!: string;
+  public _tokenExpirationDate!: Date | string
+}

@@ -8,16 +8,22 @@
     <h4 class="name">Harit Tilavat </h4>
   </div>
   <div class="profile-icons">
-    <a [href]="iconItem.url" target="_blank" class="social-links" *ngFor="let iconItem of iconList"><i [class]="'fa-brands '+iconItem.icon"></i></a>
+    <a [href]="iconItem.url" target="_blank" class="social-links" *ngFor="let iconItem of iconList"><i
+        [class]="'fa-brands '+iconItem.icon"></i></a>
   </div>
 </div>
 <div class="menu navbar">
   <ul>
-    <li *ngFor="let item of sidebarMenu;let i=index">
-      <a class="nav-link" [routerLink]="item.routing" [ngClass]="{'active': i+1===activeRouteId, 'login':item.label==='Login'}" (click)="onRouting(i+1,item.routing)">
-        <i [class]="item.className"></i>
-        <span>{{item.label}}</span>
-      </a>
+    <li *ngFor="let item of sidebarMenu;let i=index" [ngClass]="{'d-none':isAuthenticated && item.label==='Login' || !isAuthenticated && item.label==='Logout'}">
+      <ng-container>
+        <a class="nav-link" [routerLink]="item.routing"
+          [ngClass]="{'active': i+1===activeRouteId, 'auth':item.routing==='/auth'}"
+          routerLinkActive="active"
+          (click)="onRouting(i+1,item.routing,item.label)">
+          <i [class]="item.className" [ngClass]="{'fa fa-xmark-square':item.label==='Logout'}"></i>
+          <span>{{item.label}}</span>
+        </a>
+      </ng-container>
     </li>
   </ul>
 </div>

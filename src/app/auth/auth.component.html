@@ -9,23 +9,28 @@
                 <div class="form-head text-center">
                   <p class="h6"><i class="fa-solid fa-3x fa-right-to-bracket"></i></p>
                   <p class="h1">{{loginMode?'Login Here':'Sign up Here'}}</p>
-                  <p>Securely {{loginMode?'Login':'Sign up'}} to your account and explore a personalized experience tailored just for you.!</p>
+                  <p>Securely {{loginMode?'Login':'Sign up'}} to your account and explore a personalized experience
+                    tailored just for you.!</p>
                 </div>
                 <div class="form-body">
                   <div class="form-group">
                     <label for="email" class="form-label">Enter Email</label>
                     <input type="text" class="form-control" id="email" formControlName="email">
                     <div class="error-message" *ngIf="authForm.controls['email'].touched">
-                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['required']">Email Required!</span>
-                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['email']">Invalid Email!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['required']">Email
+                        Required!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['email']">Invalid
+                        Email!</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="current-password" class="form-label">Enter Password</label>
                     <input type="password" class="form-control" id="current-password" formControlName="password">
                     <div class="error-message" *ngIf="authForm.controls['password'].touched">
-                      <span class="error text-danger" *ngIf="authForm.controls['password'].errors?.['required']">Password Required!</span>
-                      <span class="error text-danger" *ngIf="authForm.controls['password'].errors?.['minlength']">Weak Password!</span>
+                      <span class="error text-danger"
+                        *ngIf="authForm.controls['password'].errors?.['required']">Password Required!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['password'].errors?.['minlength']">Weak
+                        Password!</span>
                     </div>
                   </div>
                   <div class="form-group d-flex-between mt-4">
@@ -39,7 +44,10 @@
                   </div>
                   <div class="form-group">
                     <div class="submit">
-                      <button type="submit" class="btn submit-btn form-control" type="submit">{{loginMode?'Login':'Sign up'}}</button>
+                      <button type="submit" class="btn submit-btn form-control" type="submit">
+                        <span *ngIf="isLoading"> <i class="fa fa-rotate rotate-round"></i></span>
+                        <span class="ms-2">{{loginMode?'Login':'Sign up'}}</span>
+                      </button>
                     </div>
                   </div>
                   <div class="form-group" *ngIf="loginMode">
@@ -75,8 +83,16 @@
                   </div>
                   <div class="form-group text-center">
                     <p (click)="onChangeMode()">
-                      {{loginMode?"Don't have":"Have"}} an account ? <a class="auth-mode" > {{loginMode?"Sign up":"Login"}}</a>
+                      {{loginMode?"Don't have":"Have"}} an account ? <a class="auth-mode">
+                        {{loginMode?"Signup":"Login"}}</a>
                     </p>
+                  </div>
+                  <div class="alert-group">
+                    <div class="alert-toast w-auto " *ngIf="error">
+                      <div class="alert alert-danger">
+                        {{error}}!
+                      </div>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -85,4 +101,7 @@
         </div>
       </div>
     </div>
-</div>
+  </div>
+  <ng-container>
+    <!-- Flexbox container for aligning the toasts -->
+  </ng-container>

@@ -91,11 +91,11 @@
             display: inline-block;
           }
         }
-        .nav-link.active,.nav-link.active.login {
+        .nav-link.active,.nav-link.active.auth {
           color: $main-color-light;
           opacity: 1;
         }
-        .nav-link.login {
+        .nav-link.auth {
           box-shadow: 0px 0px 10px #f0f0f0;
           background: transparent;
           border-radius: 9px;

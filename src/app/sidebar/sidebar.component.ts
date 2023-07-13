@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Store } from '@ngrx/store';
+import * as fromApp from 'src/app/store/app.reducer';
+import * as AuthActions from '../auth/store/auth.actions';
+import { State } from '../auth/store/auth.reducer';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -7,31 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   public activeRouteId: number = 1;
+  public isAuthenticated!: boolean;
   iconList: any = [
     {
       id: 1,
-      icon:'fa-facebook',
-      url:'https://www.facebook.com/harit.tilavat.18'
+      icon: 'fa-facebook',
+      url: 'https://www.facebook.com/harit.tilavat.18'
     },
     {
       id: 2,
-      icon:'fa-github',
-      url:'https://github.com/harii-tilavat'
+      icon: 'fa-github',
+      url: 'https://github.com/harii-tilavat'
     },
     {
       id: 3,
-      icon:'fa-instagram',
-      url:'https://www.instagram.com/harii_x08'
+      icon: 'fa-instagram',
+      url: 'https://www.instagram.com/harii_x08'
     },
     {
       id: 4,
-      icon:'fa-skype',
-      url:'https://secure.skype.com/portal/profile?intsrc=client-_-windows-_-8.98.0.407-_-.userInfo.profile&tcg=4ee20ffe-5e43-4a1c-8598-d98c77163f43'
+      icon: 'fa-skype',
+      url: 'https://secure.skype.com/portal/profile?intsrc=client-_-windows-_-8.98.0.407-_-.userInfo.profile&tcg=4ee20ffe-5e43-4a1c-8598-d98c77163f43'
     },
     {
       id: 4,
-      icon:'fa-linkedin-in',
-      url:'https://www.linkedin.com/in/harit-tilavat-8a6888214'
+      icon: 'fa-linkedin-in',
+      url: 'https://www.linkedin.com/in/harit-tilavat-8a6888214'
     }
   ]
   public sidebarMenu: any = [
@@ -77,13 +82,26 @@ export class SidebarComponent implements OnInit {
       routing: '/auth',
       className: 'fa-solid fa-right-to-bracket',
     },
-
+    {
+      id: 7,
+      label: 'Logout',
+      routing: '/auth',
+      className: 'fa-solid fa-right-to-bracket',
+    },
   ]
-  constructor() { }
+  constructor(private store: Store<fromApp.AppState>, private router:Router) { }
   ngOnInit(): void {
+    this.store.select('auth').subscribe({
+      next: (resData: State) => {
+        this.isAuthenticated = !!resData.user;
+      }
+    })
   }
-  onRouting(index: number, routingValue: string) {
+  onRouting(index: number, routingValue: string,label:string) {
     document.getElementById(routingValue)?.scrollIntoView();
     this.activeRouteId = index;
+    if(label==='Logout'){
+      this.store.dispatch(AuthActions.logout());
+    }
   }
 }

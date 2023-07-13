@@ -14,6 +14,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth/store/auth.effects';
 import { environment } from 'src/environments/environment.development';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { environment } from 'src/environments/environment.development';
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot(AuthEffects)
+    EffectsModule.forRoot(AuthEffects),
+    StoreDevtoolsModule.instrument({logOnly:environment.production}),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,7 +15,6 @@ export const authReducer = createReducer(
   initialState,
   on(AuthActions.authenticateSuccess, (state,action)=>{
     const user=new User(action.email,action.userId,action.token,action.expirationDate);
-    debugger;
     return{
       ...state,
       user: user,
@@ -30,7 +29,6 @@ export const authReducer = createReducer(
     }
   }),
   on(AuthActions.signupStart, (state,action)=>{
-    debugger;
     return{
       ...state,
       authError:null,
@@ -48,6 +46,7 @@ export const authReducer = createReducer(
     return {
       ...state,
       user: null,
+      loading:false
     }
   }),
 );

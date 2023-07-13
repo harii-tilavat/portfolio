@@ -44,7 +44,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-xxl-6 col-xl-6 col-sm-6 col-md-6 col-sm-12">
-                <div class="name-info">
+                <div class="name-info mb-4 mb-md-0">
                   <label for="name" class="form-label">Name <span>*</span> </label>
                   <input type="text" class="form-control" id="name" formControlName="name">
                   <div class="error-message" *ngIf="contactForm.controls['name'].touched || isSubmitted">
@@ -54,7 +54,7 @@
                 </div>
               </div>
               <div class="col-xxl-6 col-xl-6 col-sm-6 col-md-6 col-sm-12">
-                <div class="email-info">
+                <div class="email-info ">
                   <label for="email" class="form-label">Email <span>*</span> </label>
                   <input type="email" class="form-control" id="email" formControlName="email">
                   <div class="error-message" *ngIf="contactForm.controls['email'].touched || isSubmitted">
