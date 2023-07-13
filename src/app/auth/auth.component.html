@@ -44,7 +44,7 @@
                   </div>
                   <div class="form-group">
                     <div class="submit">
-                      <button type="submit" class="btn submit-btn form-control" type="submit">
+                      <button type="submit" class="btn submit-btn form-control" type="submit" [disabled]="!authForm.valid">
                         <span *ngIf="isLoading"> <i class="fa fa-rotate rotate-round"></i></span>
                         <span class="ms-2">{{loginMode?'Login':'Sign up'}}</span>
                       </button>
@@ -52,7 +52,7 @@
                   </div>
                   <div class="form-group" *ngIf="loginMode">
                     <div class="google-logo">
-                      <button type="button" class="btn border form-control auth-btn">
+                      <button type="button" class="btn border form-control auth-btn" (click)="onGoogleSignin()">
                         <div class="google-svg">
                           <span>
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
@@ -88,7 +88,7 @@
                     </p>
                   </div>
                   <div class="alert-group">
-                    <div class="alert-toast w-auto " *ngIf="error">
+                    <div class="alert-toast w-100 " *ngIf="error">
                       <div class="alert alert-danger">
                         {{error}}!
                       </div>

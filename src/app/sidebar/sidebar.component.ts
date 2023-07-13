@@ -43,7 +43,7 @@ export class SidebarComponent implements OnInit {
     {
       id: 1,
       label: 'Home',
-      routing: 'hero',
+      routing: 'home',
       className: 'fa-solid fa-house',
     },
     {

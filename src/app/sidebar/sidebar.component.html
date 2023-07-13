@@ -17,8 +17,8 @@
     <li *ngFor="let item of sidebarMenu;let i=index" [ngClass]="{'d-none':isAuthenticated && item.label==='Login' || !isAuthenticated && item.label==='Logout'}">
       <ng-container>
         <a class="nav-link" [routerLink]="item.routing"
-          [ngClass]="{'active': i+1===activeRouteId, 'auth':item.routing==='/auth'}"
-          routerLinkActive="active"
+          [ngClass]="{ 'auth':item.routing==='/auth'}"
+          [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"
           (click)="onRouting(i+1,item.routing,item.label)">
           <i [class]="item.className" [ngClass]="{'fa fa-xmark-square':item.label==='Logout'}"></i>
           <span>{{item.label}}</span>

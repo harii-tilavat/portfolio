@@ -61,6 +61,9 @@ export class AuthComponent implements OnInit {
     // Signin ------------ https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
     // Signup ------------ https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
   }
+  onGoogleSignin():void{
+    alert("This funcationality will added Soon Bro.😁");
+  }
   resetForm(): void {
     this.authForm.reset();
   }
