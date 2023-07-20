@@ -2,7 +2,8 @@
 @import "node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
-$main-color: #040b14;
+// $main-color: #040b14;
+$main-color: black;
 $main-color-light: #149ddd;
 $partition: 300px;
 $main-title: #173b6c;
@@ -48,6 +49,7 @@ $p-color: #667085;
   .main-panel {
     margin-left: $partition;
     width: 100%;
+    background-color: #f8f8f9;
   }
 }
 

@@ -1,6 +1,5 @@
 .contact {
   padding: 50px 0;
-  color-scheme: dark;
   .location-section {
     .content {
       .info {
@@ -38,16 +37,13 @@
   .form-group {
     margin-bottom: 25px;
     .form-control {
-      // background: transparent;
       color: inherit;
       border-radius: 0;
+      background-color: transparent;
       &:focus {
         box-shadow: none;
         border-color: $main-color-light;
       }
-    }
-    .form-contro:-internal-autofill-selected {
-      background-color: red !important;
     }
     .form-label {
       font-weight: 500;

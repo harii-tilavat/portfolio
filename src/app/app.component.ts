@@ -11,7 +11,7 @@ import * as AuthActions from './auth/store/auth.actions';
 })
 export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;
-  public isLoading: boolean = false;
+  public isLoading: boolean = true;
   public isDisplay!: boolean;
   public isAuthenticated!:boolean;
   constructor(private sidebarService: SidebarService, private store: Store<fromApp.AppState>) { }
@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
       }
     });
     this.store.dispatch(AuthActions.autoLogin());
+    setTimeout(()=>{
+      this.isLoading=false;
+    },2500);
   }
 
   onToggle(): void {

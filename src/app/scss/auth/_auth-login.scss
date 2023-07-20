@@ -1,6 +1,10 @@
+.form-control, .form-check-input{
+  background-color: transparent;
+}
 .auth-section {
   height: calc(100vh - 65px);
-  overflow: scroll;
+  // min-height: 100vh;
+  // overflow: scroll;
   color: $main-color;
   a{
     color: inherit;

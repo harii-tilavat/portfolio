@@ -8,12 +8,14 @@
     </div>
   </ng-container>
   <ng-container>
-    <div class="portfolio-section" [ngClass]="{'d-none': isLoading}">
-      <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
+    <div class="portfolio-section" [ngClass]="{'visually-hidden': isLoading}">
+      <section class="sidebar border-end " id="sidebar" #sidebar (click)="onHideSidebar()">
         <app-sidebar></app-sidebar>
       </section>
       <section class="main-panel">
-        <router-outlet></router-outlet>
+        <div class="page-body">
+          <router-outlet></router-outlet>
+        </div>
         <section id="footer" class="footer">
           <app-footer></app-footer>
         </section>
