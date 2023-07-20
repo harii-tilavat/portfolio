@@ -1,22 +1,23 @@
-<ng-container *ngIf="isLoading">
-  <app-loader></app-loader>
-</ng-container>
-<ng-container>
-  <div class="bar-btn">
-    <button class="" (click)="onToggle()"><i [class]="!isDisplay?'fa fa-bars':'fa-solid fa-xmark'"></i></button>
-  </div>
-</ng-container>
-<ng-container>
-  <div class="portfolio-section" [ngClass]="{'d-none': isLoading}">
-    <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
-      <app-sidebar></app-sidebar>
-    </section>
-    <section class="main-panel">
-      <router-outlet></router-outlet>
-      <section id="footer" class="footer">
-        <app-footer></app-footer>
+<div class="main-div ">
+  <ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
+  </ng-container>
+  <ng-container>
+    <div class="bar-btn">
+      <button class="" (click)="onToggle()"><i [class]="!isDisplay?'fa fa-bars':'fa-solid fa-xmark'"></i></button>
+    </div>
+  </ng-container>
+  <ng-container>
+    <div class="portfolio-section" [ngClass]="{'d-none': isLoading}">
+      <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
+        <app-sidebar></app-sidebar>
       </section>
-    </section>
-  </div>
-
-</ng-container>
+      <section class="main-panel">
+        <router-outlet></router-outlet>
+        <section id="footer" class="footer">
+          <app-footer></app-footer>
+        </section>
+      </section>
+    </div>
+  </ng-container>
+</div>

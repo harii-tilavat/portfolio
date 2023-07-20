@@ -53,7 +53,7 @@ export class AuthComponent implements OnInit {
         this.store.dispatch(AuthActions.loginStart({ email: this.authForm.value.email, password: this.authForm.value.password }));
       }
       else {
-        this.store.dispatch(AuthActions.signupStart({ email: this.authForm.value.email, password: this.authForm.value.password }))
+        this.store.dispatch(AuthActions.signupStart({ email: this.authForm.value.email, password: this.authForm.value.password }));
         // this.authObs = this.authService.authSignup({ email: this.authForm.value.email, password: this.authForm.value.password });
       }
       this.resetForm();

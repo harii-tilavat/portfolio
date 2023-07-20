@@ -8,7 +8,7 @@ $partition: 300px;
 $main-title: #173b6c;
 $light-grey: #f5f8fd;
 $poppin: "Poppins", sans-serif;
-$p-color:#667085;
+$p-color: #667085;
 
 .bg-primary {
   background-color: $main-color !important;
@@ -71,11 +71,7 @@ $p-color:#667085;
 .sub-paragraph {
   margin-top: 20px;
 }
-.dark-theme{
-  background-color: black !important;
-  color: white !important;
-  transition: 0.3s;
-}
+
 @import "/src/app/scss/sidebar";
 @import "/src/app/scss/hero";
 @import "/src/app/scss/about";
@@ -89,6 +85,8 @@ $p-color:#667085;
 @import "/src/app/scss/loader";
 @import "/src/app/scss/auth/auth-login";
 @import "/src/app/scss/shared";
+@import "/src/app/scss/dark-them";
+
 // Media Query
 
 @media only screen and (max-width: 1199px) {

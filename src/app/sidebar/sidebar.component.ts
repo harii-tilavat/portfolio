@@ -101,7 +101,12 @@ export class SidebarComponent implements OnInit {
     document.getElementById(routingValue)?.scrollIntoView();
     this.activeRouteId = index;
     if(label==='Logout'){
-      this.store.dispatch(AuthActions.logout());
+      if(confirm('Are you sure')){
+        this.store.dispatch(AuthActions.logout());
+      }
+      else{
+        alert("Okay");
+      }
     }
   }
 }
