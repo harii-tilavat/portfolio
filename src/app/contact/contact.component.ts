@@ -51,8 +51,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     if (this.contactForm.valid) {
       this.clientName = this.contactForm.value.name;
       this.userSub = this.contactService.storeData(this.contactForm.value).subscribe();
-      this.contactForm.reset();
-      this.isSubmitted = false;
+      this.onReset();
     }
     return;
   }

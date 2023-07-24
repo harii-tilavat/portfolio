@@ -3,7 +3,7 @@
 @import "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
 // $main-color: #040b14;
-$main-color: black;
+$main-color: #111;
 $main-color-light: #149ddd;
 $partition: 300px;
 $main-title: #173b6c;
@@ -12,6 +12,14 @@ $poppin: "Poppins", sans-serif;
 $p-color: #667085;
 $border-light:#dee2e6;
 $border-dark:rgb(33,37,41);
+$box-shadow-blue: rgba(3, 102, 214, 0.3) 0px 0px 5px 3px;
+// Color
+$dark-100: #111;
+$dark-80: #252526;
+$dark-60: #333;
+$dark-40: #1e1e1e;
+$dark-20: #3e3e42;
+
 .bg-primary {
   background-color: $main-color !important;
 }

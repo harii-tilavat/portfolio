@@ -9,26 +9,26 @@ import { fadeInAnimation } from './shared/shared.module';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations:[fadeInAnimation]
+  animations: [fadeInAnimation]
 })
 export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;
   public isLoading: boolean = true;
   public isDisplay!: boolean;
-  public isAuthenticated!:boolean;
+  public isAuthenticated!: boolean;
   constructor(private sidebarService: SidebarService, private store: Store<fromApp.AppState>) { }
   ngOnInit(): void {
     this.store.select('auth').subscribe({
-      next: (response:State) => {
-        this.isAuthenticated=!!response.user;
+      next: (response: State) => {
+        this.isAuthenticated = !!response.user;
       },
       error: (error) => {
       }
     });
     this.store.dispatch(AuthActions.autoLogin());
-    setTimeout(()=>{
-      this.isLoading=false;
-    },0);
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 0);
   }
 
   onToggle(): void {

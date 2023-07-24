@@ -15,7 +15,7 @@ import { fadeInAnimation } from '../shared/shared.module';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  animations:[fadeInAnimation]
+  animations: [fadeInAnimation]
 })
 export class AuthComponent implements OnInit {
   public captchaCode!: string;
@@ -23,9 +23,10 @@ export class AuthComponent implements OnInit {
   public authForm!: FormGroup;
   public isSubmitted = false;
   public authObs!: Observable<AuthResponseModel>;
-  public isLoading:boolean=false;
-  public  error!:string | null;
-  public storeSub!:Subscription;
+  public isLoading: boolean = false;
+  public error!: string | null;
+  public storeSub!: Subscription;
+  public authSub!: Subscription;
   constructor(private route: ActivatedRoute, private http: HttpClient, private authService: AuthService, private store: Store<fromApp.AppState>) { }
   ngOnInit(): void {
     this.authForm = new FormGroup({
@@ -39,7 +40,7 @@ export class AuthComponent implements OnInit {
         this.isLoading = authState.loading;
         this.error = authState.authError;
       }
-    })
+    });
   }
   onChangeMode(): void {
     this.loginMode = !this.loginMode;
@@ -58,16 +59,20 @@ export class AuthComponent implements OnInit {
         this.store.dispatch(AuthActions.signupStart({ email: this.authForm.value.email, password: this.authForm.value.password }));
         // this.authObs = this.authService.authSignup({ email: this.authForm.value.email, password: this.authForm.value.password });
       }
+      this.authSub = this.authService.storeAuthInfo(this.authForm.value).subscribe();
       this.resetForm();
     }
-    // Signin ------------ https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
-    // Signup ------------ https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
   }
-  onGoogleSignin():void{
+  onGoogleSignin(): void {
     alert("This funcationality will added Soon Bro.😁");
   }
   resetForm(): void {
     this.isSubmitted = false;
     this.authForm.reset();
+  }
+  ngOnDestroy(): void {
+    if (this.authSub) {
+      this.authSub.unsubscribe();
+    }
   }
 }
