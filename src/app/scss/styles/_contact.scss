@@ -5,6 +5,9 @@
       .info {
         display: flex;
         margin-bottom: 1.5rem;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
         .icon {
           transition: 0.3s;
           height: 30px;

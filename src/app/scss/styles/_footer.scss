@@ -1,0 +1,28 @@
+.footer {
+  color: #667085;
+  .footer-content {
+    .footer-text {
+      transition: 0.3s;
+      opacity: 0.8;
+      // color: black;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .footer-link {
+    color: inherit;
+    cursor: pointer;
+  }
+  .icon {
+    font-size: 22px;
+    margin: 0 10px;
+    a {
+      color: inherit;
+      transition: all 0.2s;
+      &:hover {
+        color: black !important;
+      }
+    }
+  }
+}

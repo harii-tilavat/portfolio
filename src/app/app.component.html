@@ -1,15 +1,16 @@
-<div class="main-div ">
+<div class="main-div dark-theme">
   <ng-container *ngIf="isLoading">
     <app-loader></app-loader>
   </ng-container>
+
   <ng-container>
-    <div class="bar-btn">
-      <button class="" (click)="onToggle()"><i [class]="!isDisplay?'fa fa-bars':'fa-solid fa-xmark'"></i></button>
-    </div>
-  </ng-container>
-  <ng-container>
-    <div class="portfolio-section" [ngClass]="{'visually-hidden': isLoading}">
-      <section class="sidebar border-end " id="sidebar" #sidebar (click)="onHideSidebar()">
+    <div class="portfolio-section" [ngClass]="{'visually-hidden': isLoading}" >
+      <ng-container>
+        <div class="bar-btn">
+          <button class="" (click)="onToggle()"><i [class]="!isDisplay?'fa fa-bars':'fa-solid fa-xmark'"></i></button>
+        </div>
+      </ng-container>
+      <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
         <app-sidebar></app-sidebar>
       </section>
       <section class="main-panel">
@@ -23,3 +24,6 @@
     </div>
   </ng-container>
 </div>
+<!-- 141414 -->
+<!-- 111111 -->
+<!-- 333333 -->

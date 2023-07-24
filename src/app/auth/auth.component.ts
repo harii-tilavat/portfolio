@@ -9,11 +9,13 @@ import * as fromApp from 'src/app/store/app.reducer';
 import * as AuthActions from './store/auth.actions';
 import { Store, StoreModule } from '@ngrx/store';
 import { State } from './store/auth.reducer';
+import { fadeInAnimation } from '../shared/shared.module';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  animations:[fadeInAnimation]
 })
 export class AuthComponent implements OnInit {
   public captchaCode!: string;
@@ -65,6 +67,7 @@ export class AuthComponent implements OnInit {
     alert("This funcationality will added Soon Bro.😁");
   }
   resetForm(): void {
+    this.isSubmitted = false;
     this.authForm.reset();
   }
 }

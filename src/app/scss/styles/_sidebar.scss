@@ -9,6 +9,7 @@
   z-index: 1000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   .profile {
+    border-bottom: 1px solid $border-light;
     text-align: center;
     padding: 10px;
     display: flex;
@@ -73,7 +74,6 @@
           transition: 0.2s;
           display: flex;
           align-items: center;
-          color: black;
           transition: 0.2s;
           font-size: 15px;
           font-weight: 500;
@@ -100,7 +100,7 @@
           box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
         }
         .nav-link.auth {
-          box-shadow: 0px 0px 10px #f0f0f0;
+          box-shadow: 0px 0px 3px #f0f0f0;
           border-radius: 9px;
           background: $main-color-light;
           font-weight: 700;

@@ -10,7 +10,8 @@ $main-title: #173b6c;
 $light-grey: #f5f8fd;
 $poppin: "Poppins", sans-serif;
 $p-color: #667085;
-
+$border-light:#dee2e6;
+$border-dark:rgb(33,37,41);
 .bg-primary {
   background-color: $main-color !important;
 }
@@ -73,21 +74,21 @@ $p-color: #667085;
 .sub-paragraph {
   margin-top: 20px;
 }
-
-@import "/src/app/scss/sidebar";
-@import "/src/app/scss/hero";
-@import "/src/app/scss/about";
-@import "/src/app/scss/facts";
-@import "/src/app/scss/skill";
-@import "/src/app/scss/resume";
-@import "/src/app/scss/services";
-@import "/src/app/scss/ask-project";
-@import "/src/app/scss/contact";
-@import "/src/app/scss/footer";
-@import "/src/app/scss/loader";
-@import "/src/app/scss/auth/auth-login";
-@import "/src/app/scss/shared";
-@import "/src/app/scss/dark-them";
+@import './app/scss/main';
+// @import "/src/app/scss/sidebar";
+// @import "/src/app/scss/hero";
+// @import "/src/app/scss/about";
+// @import "/src/app/scss/facts";
+// @import "/src/app/scss/skill";
+// @import "/src/app/scss/resume";
+// @import "/src/app/scss/services";
+// @import "/src/app/scss/ask-project";
+// @import "/src/app/scss/contact";
+// @import "/src/app/scss/footer";
+// @import "/src/app/scss/loader";
+// @import "/src/app/scss/auth/auth-login";
+// @import "/src/app/scss/shared";
+// @import "/src/app/scss/dark-theme";
 
 // Media Query
 

@@ -17,17 +17,17 @@
     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
       <div class="location-section">
         <div class="content">
-          <div class="info " *ngFor="let item of contactList">
-            <div class="icon d-flex-center ">
-              <span>
-                <i [class]="item.icon"></i>
-              </span>
-            </div>
-            <div class="content-info">
-              <span class=" h5">{{item.label}} </span>
-              <span>{{item.desc}} </span>
-            </div>
-          </div>
+          <a [href]="item.url" class="info " *ngFor="let item of contactList">
+              <div class="icon d-flex-center ">
+                <span>
+                  <i [class]="item.icon"></i>
+                </span>
+              </div>
+              <div class="content-info">
+                <span class=" h5">{{item.label}} </span>
+                <span>{{item.desc}} </span>
+              </div>
+          </a>
         </div>
         <div class="image-section">
           <div class="location-img">
@@ -86,7 +86,7 @@
           </div>
           <div class="form-group">
             <div class="form-submit d-flex-center">
-              <button type="submit" class="btn my-btn submit" [disabled]="!contactForm.valid ">Submit</button>
+              <button type="submit" class="btn my-btn submit">Submit</button>
               <button type="reset" class="btn my-btn mx-3" (click)="onReset()">Reset</button>
             </div>
           </div>

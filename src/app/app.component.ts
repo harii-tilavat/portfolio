@@ -4,10 +4,12 @@ import { Store } from '@ngrx/store';
 import * as fromApp from './store/app.reducer';
 import { State } from './auth/store/auth.reducer';
 import * as AuthActions from './auth/store/auth.actions';
+import { fadeInAnimation } from './shared/shared.module';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations:[fadeInAnimation]
 })
 export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;
@@ -26,7 +28,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch(AuthActions.autoLogin());
     setTimeout(()=>{
       this.isLoading=false;
-    },2500);
+    },0);
   }
 
   onToggle(): void {

@@ -2,8 +2,8 @@
   background-color: transparent;
 }
 .auth-section {
-  height: calc(100vh - 65px);
-  // min-height: 100vh;
+  // height: calc(100vh - 65px);
+  height: 100vh;
   // overflow: scroll;
   color: $main-color;
   a{
@@ -17,17 +17,20 @@
           rgba(17, 17, 26, 0.1) 0px 8px 24px,
           rgba(17, 17, 26, 0.1) 0px 16px 48px;
         border-radius: 10px;
+        max-width: 700px;
         .forgot-pass {
           text-decoration: underline;
         }
         .submit-btn{
           background-color: $main-color;
-          color: white;
+          color: #f0f0f0;
+          font-weight: 500;
         }
         .google-logo {
           .auth-btn {
             display: flex;
             justify-content: center;
+            font-weight: 500;
             .google-svg {
               height: 20px;
               width: 20px;
