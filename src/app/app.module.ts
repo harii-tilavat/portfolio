@@ -17,7 +17,8 @@ import { environment } from 'src/environments/environment.development';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ToggleSidebarDirective } from './_directives/toggle-sidebar.directive';
+import { SharedModule } from './shared/shared.module';
+import { ToggleSidebarDirective } from './_directives/toggle-sidebar/toggle-sidebar.directive';
 // import {} from ''
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ToggleSidebarDirective } from './_directives/toggle-sidebar.directive';
     FooterComponent,
     LoaderComponent,
     ScrollSpyDirective,
-    ToggleSidebarDirective,
+    ToggleSidebarDirective
   ],
   imports: [
     BrowserModule,
