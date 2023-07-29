@@ -11,9 +11,10 @@ import { SkillComponent } from '../skill/skill.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutFactsComponent } from '../about/about-facts/about-facts.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-const routes:Routes=[
-  {path:'', component:MainPanelComponent}
+import { AddCommentsComponent } from '../add-comments/add-comments.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+const routes: Routes = [
+  { path: '', component: MainPanelComponent }
 ]
 
 @NgModule({
@@ -26,13 +27,18 @@ const routes:Routes=[
     MyServiceComponent,
     ContactComponent,
     AskProjectComponent,
-    AboutFactsComponent
+    AboutFactsComponent,
+    AddCommentsComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    RouterModule.forChild(routes),
   ]
 })
 export class MainPanelModule { }

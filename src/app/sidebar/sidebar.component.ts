@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromApp from 'src/app/store/app.reducer';
 import * as AuthActions from '../auth/store/auth.actions';
@@ -15,6 +15,7 @@ export class SidebarComponent implements OnInit {
   public activeRouteId: number = 1;
   public isAuthenticated!: boolean;
   public themeClass: string = 'light';
+  @Output() sidebarEvent = new EventEmitter<boolean>();
   iconList: any = [
     {
       id: 1,
@@ -101,9 +102,10 @@ export class SidebarComponent implements OnInit {
     });
   }
   onRouting(index: number, routingValue: string, label: string) {
+    this.sidebarEvent.emit(false);
     setTimeout(() => {
       document.getElementById(routingValue)?.scrollIntoView();
-    }, 50);
+    }, 20);
     this.activeRouteId = index;
     if (label === 'Logout') {
       if (confirm('Are you sure')) {

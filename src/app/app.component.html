@@ -10,11 +10,11 @@
           <button class="" (click)="onToggle()"><i [class]="!isDisplay?'fa fa-bars':'fa-solid fa-xmark'"></i></button>
         </div>
       </ng-container>
-      <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
-        <app-sidebar></app-sidebar>
+      <section class="sidebar" id="sidebar" #sidebar>
+        <app-sidebar (sidebarEvent)="onHideSidebar()"></app-sidebar>
       </section>
-      <section class="main-panel">
-        <div class="page-body">
+      <section class="main-panel" (click)="onHideSidebar()">
+        <div class="page-body" [@fadeIn]>
           <router-outlet></router-outlet>
         </div>
         <section id="footer" class="footer">
@@ -24,6 +24,3 @@
     </div>
   </ng-container>
 </div>
-<!-- 141414 -->
-<!-- 111111 -->
-<!-- 333333 -->

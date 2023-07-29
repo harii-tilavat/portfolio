@@ -10,7 +10,7 @@ import { ToggleSidebarDirective } from '../_directives/toggle-sidebar/toggle-sid
   imports: [
     CommonModule,
   ],
-  exports:[
+  exports: [
 
   ]
 })
@@ -19,5 +19,8 @@ export const fadeInAnimation = trigger('fadeIn', [
   transition(':enter', [
     style({ opacity: 0 }),
     animate('300ms', style({ opacity: 1 }))
-  ])
+  ]),
+  transition(':leave', [ // Add the transition for ':leave' state
+    animate('300ms', style({ opacity: 0 }))
+  ]),
 ]);

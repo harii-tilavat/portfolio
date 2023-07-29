@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
-
+@import "node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 // $main-color: #040b14;
 $main-color: #111;
 $main-color-light: #149ddd;
@@ -82,6 +82,19 @@ $dark-20: #3e3e42;
 .sub-paragraph {
   margin-top: 20px;
 }
+.icon-list {
+  display: flex;
+  .icon {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+  }
+}
+
 @import './app/scss/main';
 // @import "/src/app/scss/sidebar";
 // @import "/src/app/scss/hero";
