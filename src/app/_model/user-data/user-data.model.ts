@@ -6,9 +6,9 @@ export interface UserDataModel {
   id?: string;
 }
 export interface UserFeedbackModel {
-  id: number,
+  id?: number,
   userName: string,
   userFeedback?: string,
-  userReply?: string,
+  userReply?: UserFeedbackModel[],
   date?: Date
 }

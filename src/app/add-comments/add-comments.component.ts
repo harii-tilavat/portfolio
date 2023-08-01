@@ -38,7 +38,7 @@ export class AddCommentsComponent implements OnInit {
     if(!this.feedbackForm.valid){
       return;
     }
-    // this.userService.storeUserFeedback({name:'harii'}).subscribe();
+    this.userService.storeUserFeedback(this.feedbackForm.value).subscribe();
   }
   onSubmitReply(): void {
     console.log("Reply form: ", this.replyForm.value);
