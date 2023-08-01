@@ -3,6 +3,7 @@ import { fadeInAnimation } from '../shared/shared.module';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../_services';
+import { UserFeedbackModel } from '../_model';
 
 @Component({
   selector: 'app-add-comments',
@@ -16,31 +17,61 @@ export class AddCommentsComponent implements OnInit {
   public reply: boolean = false;
   public replyForm!: FormGroup;
   public feedbackForm!: FormGroup;
-  public isSubmitReply: boolean=false;
-  public isSubmitFeedback: boolean=false;
+  public isSubmitReply: boolean = false;
+  public isSubmitFeedback: boolean = false;
+  public feedbackData: UserFeedbackModel[] = [];
+  public errorMessage!: string;
+  public isLoading: boolean = false;
   constructor(private snakeBar: MatSnackBar, private userService: UserService) { }
   ngOnInit(): void {
     this.date = new Date();
     this.feedbackForm = new FormGroup({
       userName: new FormControl(null, [Validators.required]),
-      feedbackContent: new FormControl(null, [Validators.required]),
+      userFeedback: new FormControl(null, [Validators.required]),
     });
     this.replyForm = new FormGroup({
       userName: new FormControl(null, [Validators.required]),
       userReply: new FormControl(null, [Validators.required]),
     });
-    // this.snakeBar.open('Hello World','Ok');
+
+    this.userService.getFeedbackData().subscribe({
+      next: (response: UserFeedbackModel[]) => {
+        this.feedbackData = response;
+      }
+    });
   }
   onSubmitFeedback(): void {
-    this.isSubmitFeedback=true;
-    this.isSubmitReply=true;
-    console.log("Feedback form: ", this.feedbackForm.value);
-    if(!this.feedbackForm.valid){
-      return;
+    this.isSubmitFeedback = true;
+    this.isSubmitReply = true;
+    if (this.feedbackForm.valid) {
+      this.isLoading = true;
+      this.userService.storeUserFeedback(this.feedbackForm.value).subscribe({
+        next: () => {
+          this.snakeBar.open(`Thank you ${this.feedbackForm.value.userName} for your feedback!`, 'Ok');
+          this.isLoading = false;
+
+        }, error: () => {
+          this.errorMessage = 'Something Went Wrong! ';
+          this.isLoading = false;
+        }, complete: () => {
+          this.resetForm();
+        }
+      });
     }
-    this.userService.storeUserFeedback(this.feedbackForm.value).subscribe();
+    return;
+
+  }
+  onReply(id: string) {
+    const selectedUser: UserFeedbackModel = this.feedbackData.find(i => i.id === id)!;
   }
   onSubmitReply(): void {
     console.log("Reply form: ", this.replyForm.value);
+  }
+  resetForm(): void {
+    this.feedbackForm.reset();
+    this.errorMessage = '';
+    this.isLoading = false;
+    this.isSubmitFeedback = false;
+    this.isSubmitReply = false;
   }
 }

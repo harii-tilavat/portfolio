@@ -19,28 +19,36 @@
               <div class="form-group">
                 <label for="feedback-desc" class="fw-semibold">Enter your Feedback. </label>
                 <textarea name="" id="feedback-desc" rows="3" class="form-control" placeholder=""
-                  formControlName="feedbackContent">
+                  formControlName="userFeedback">
                 </textarea>
-                <div class="error-message" *ngIf="feedbackForm.controls['feedbackContent'].touched || isSubmitFeedback">
+                <div class="error-message" *ngIf="feedbackForm.controls['userFeedback'].touched || isSubmitFeedback">
                   <span class="error text-danger"
-                    *ngIf="feedbackForm.controls['feedbackContent'].errors?.['required']">Feedback Required!
+                    *ngIf="feedbackForm.controls['userFeedback'].errors?.['required']">Feedback Required!
                   </span>
                 </div>
               </div>
               <div class="form-group">
                 <div class="post-feedback">
-                  <button type="submit" class="btn post-btn btn-dark">Post Feedback</button>
+                  <button type="submit" class="btn post-btn btn-dark">
+                    <span class="me-2">{{'Post feedback'}}</span>
+                    <span *ngIf="isLoading"> <i class="fa fa-rotate rotate-round"></i></span>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group" *ngIf="errorMessage">
+                <div class="">
+                  <p class="alert alert-danger"> {{errorMessage}}</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="total-feedback mt-3">
-            <h4>Feedback (9)</h4>
+            <h4>Feedback ({{feedbackData.length}})</h4>
             <hr>
           </div>
         </form>
         <div class="view-feedback">
-          <div class="row" *ngFor="let item of [1,2,3]">
+          <div class="row" *ngFor="let item of feedbackData">
             <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">
               <div class="icon-list">
                 <span class="icon"><img src="/assets/svg/user.svg" alt="" class="img-fluid"></span>
@@ -49,13 +57,13 @@
             <div class="col-xxl-9 col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
               <div class="content border rounded p-4">
                 <div class="feddback-header">
-                  <span class="feedback-title fs-5 fw-semibold">Harit Tilavat</span>
-                  <small class="ms-3">{{date | date}}</small>
+                  <span class="feedback-title fs-5 fw-semibold">{{item.userName}}</span>
+                  <small class="ms-3">{{item.date | date}}</small>
                 </div>
-                <p>Lorem ipsum dolor </p>
+                <p>{{item.userFeedback}} </p>
                 <p class="view-reply" (click)="showReply=!showReply">{{showReply?'Hide Reply':'View all replies'}}</p>
                 <!-- -------------------------- Nested Row ------------------------ -->
-                <ng-container *ngFor="let subItem of [1,2,3]; let i=index">
+                <ng-container *ngFor="let subItem of [1]; let i=index">
                   <div class="row" *ngIf="showReply" [@fadeIn]>
                     <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2 p-0">
                       <div class="icon-list">
@@ -76,7 +84,7 @@
                   </div>
                 </ng-container>
                 <div class="reply-btn">
-                  <button class="btn btn-dark" (click)="reply=true" *ngIf="!reply" [@fadeIn]>REPLY</button>
+                  <button class="btn btn-dark" (click)="onReply(item.id!)" *ngIf="!reply" [@fadeIn]>REPLY</button>
                 </div>
                 <form *ngIf="reply" [@fadeIn] [formGroup]="replyForm" (ngSubmit)="onSubmitReply()">
                   <div class="form-group">
