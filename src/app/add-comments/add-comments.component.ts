@@ -3,7 +3,7 @@ import { fadeInAnimation } from '../shared/shared.module';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../_services';
-import { UserFeedbackModel } from '../_model';
+import { User, UserFeedbackModel } from '../_model';
 
 @Component({
   selector: 'app-add-comments',
@@ -22,6 +22,7 @@ export class AddCommentsComponent implements OnInit {
   public feedbackData: UserFeedbackModel[] = [];
   public errorMessage!: string;
   public isLoading: boolean = false;
+  public selectedUser!: UserFeedbackModel;
   constructor(private snakeBar: MatSnackBar, private userService: UserService) { }
   ngOnInit(): void {
     this.date = new Date();
@@ -33,12 +34,7 @@ export class AddCommentsComponent implements OnInit {
       userName: new FormControl(null, [Validators.required]),
       userReply: new FormControl(null, [Validators.required]),
     });
-
-    this.userService.getFeedbackData().subscribe({
-      next: (response: UserFeedbackModel[]) => {
-        this.feedbackData = response;
-      }
-    });
+    this.getFeedback();
   }
   onSubmitFeedback(): void {
     this.isSubmitFeedback = true;
@@ -49,7 +45,7 @@ export class AddCommentsComponent implements OnInit {
         next: () => {
           this.snakeBar.open(`Thank you ${this.feedbackForm.value.userName} for your feedback!`, 'Ok');
           this.isLoading = false;
-
+          this.getFeedback();
         }, error: () => {
           this.errorMessage = 'Something Went Wrong! ';
           this.isLoading = false;
@@ -59,13 +55,29 @@ export class AddCommentsComponent implements OnInit {
       });
     }
     return;
-
   }
   onReply(id: string) {
-    const selectedUser: UserFeedbackModel = this.feedbackData.find(i => i.id === id)!;
+    this.reply = true;
+    this.selectedUser = this.feedbackData.find(i => i.id === id)!;
+    console.log("Selected user: ", this.selectedUser);
+  }
+  viewReply(id: string): void {
+    this.showReply = !this.showReply;
+    this.selectedUser = this.feedbackData.find(i => i.id === id)!;
   }
   onSubmitReply(): void {
-    console.log("Reply form: ", this.replyForm.value);
+    this.userService.updateFeedbackData(this.selectedUser.id, this.replyForm.value).subscribe({
+      next: (response: any) => {
+        this.snakeBar.open('Reply sent Successfully', 'Ok', { duration: 2500 });
+        this.getFeedback();
+      },
+      error: (error) => {
+        this.snakeBar.open(error, 'ok');
+      },
+      complete: () => {
+        this.resetForm();
+      }
+    });
   }
   resetForm(): void {
     this.feedbackForm.reset();
@@ -73,5 +85,14 @@ export class AddCommentsComponent implements OnInit {
     this.isLoading = false;
     this.isSubmitFeedback = false;
     this.isSubmitReply = false;
+    this.reply = false;
+  }
+  getFeedback(): void {
+    this.userService.getFeedbackData().subscribe({
+      next: (response: UserFeedbackModel[]) => {
+        this.feedbackData = response;
+        console.log("Reply Data:", response);
+      }
+    });
   }
 }
