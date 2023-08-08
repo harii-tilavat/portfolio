@@ -25,7 +25,6 @@ export class UserService {
         }
 
         let testArray = feedbackData.map((item) => {
-          debugger;
           if (item.replyData) {
             for (let j in item.replyData) {
               replyData.push({ ...item.replyData[j], replyId: j });

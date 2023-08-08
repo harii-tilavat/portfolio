@@ -1,10 +1,21 @@
 <div class="container">
   <div class="row">
+    <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12">
+      <div class="form-head">
+        <div class="title">
+          <span>Give feedback</span>
+        </div>
+        <div class="sub-paragraph">
+          <p>Your thoughts matter to us! We're continuously striving to improve. Could you please take a moment to share
+            your feedback? We truly value your insights.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-xxl-8 col-xl-10 col-lg-10 col-md-10 col-sm-12">
       <div class="content">
-        <form action="" class="py-3 " [formGroup]="feedbackForm" (ngSubmit)="onSubmitFeedback()">
-          <h4>{{"Add new feedback" | uppercase}}</h4>
-          <hr>
+        <form action="" class="" [formGroup]="feedbackForm" (ngSubmit)="onSubmitFeedback()">
           <div class="card">
             <div class="card-body">
               <div class="form-group">
@@ -60,12 +71,15 @@
             </div>
             <div class="col-xxl-9 col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
               <div class="content border rounded p-4">
-                <div class="feddback-header">
+                <div class="feddback-header d-flex align-items-center">
                   <span class="feedback-title fs-5 fw-semibold">{{item.userName}}</span>
                   <small class="ms-3">{{item.date | date}}</small>
                 </div>
                 <p>{{item.userFeedback}} </p>
-                <p class="view-reply" (click)="viewReply(item.id)" *ngIf="item.replyData">{{showReply && item.id===selectedUser.id?'Hide Reply':'View all replies'}}</p>
+                <div *ngIf="false">
+                  <p class="view-reply" (click)="viewReply(item.id)" *ngIf="item.replyData">{{showReply &&
+                    item.id===selectedUser.id?'Hide Reply':'View all replies'}}</p>
+                </div>
                 <!-- -------------------------- Nested Row ------------------------ -->
                 <ng-container *ngFor="let subItem of item.replyData; let i=index">
                   <div class="row" *ngIf="item.id===selectedUser?.id && showReply" [@fadeIn]>
@@ -87,16 +101,17 @@
                     </div>
                   </div>
                 </ng-container>
-                <div class="reply-btn">
+                <div class="reply-btn" *ngIf="false">
                   <button class="btn btn-dark" (click)="onReply(item.id!)" *ngIf="!reply" [@fadeIn]>REPLY</button>
                 </div>
-                <form *ngIf="reply && item.id===selectedUser.id" [@fadeIn] [formGroup]="replyForm" (ngSubmit)="onSubmitReply()">
+                <form *ngIf="reply && item.id===selectedUser.id" [@fadeIn] [formGroup]="replyForm"
+                  (ngSubmit)="onSubmitReply()">
                   <div class="form-group">
                     <label for="reply-name" class="fw-semibold">Enter Your Name</label>
                     <input type="text" name="" id="reply-name" class="form-control" formControlName="userName">
                     <div class="error-message" *ngIf="replyForm.controls['userName'].touched || isSubmitReply">
-                      <span class="error text-danger"
-                        *ngIf="replyForm.controls['userName'].errors?.['required']">Name Required!
+                      <span class="error text-danger" *ngIf="replyForm.controls['userName'].errors?.['required']">Name
+                        Required!
                       </span>
                     </div>
                   </div>
@@ -105,8 +120,8 @@
                     <textarea name="" id="reply-content" rows="2" class="form-control" formControlName="userReply">
                     </textarea>
                     <div class="error-message" *ngIf="replyForm.controls['userReply'].touched || isSubmitReply">
-                      <span class="error text-danger"
-                        *ngIf="replyForm.controls['userReply'].errors?.['required']">Reply Required!
+                      <span class="error text-danger" *ngIf="replyForm.controls['userReply'].errors?.['required']">Reply
+                        Required!
                       </span>
                     </div>
                   </div>
