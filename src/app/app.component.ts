@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SidebarService } from './_services/sidebar/sidebar.service';
 import { Store } from '@ngrx/store';
 import * as fromApp from './store/app.reducer';
@@ -9,7 +9,7 @@ import { fadeInAnimation } from './shared/shared.module';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [fadeInAnimation]
+  animations: [fadeInAnimation],
 })
 export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;

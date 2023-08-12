@@ -43,7 +43,7 @@ export class AddCommentsComponent implements OnInit {
       this.isLoading = true;
       this.userService.storeUserFeedback(this.feedbackForm.value).subscribe({
         next: () => {
-          this.snakeBar.open(`Thank you ${this.feedbackForm.value.userName} for your feedback!`, 'Ok');
+          this.snakeBar.open(`Thank you ${this.feedbackForm.value.userName} for your feedback!`, 'Ok', { duration: 2500 });
           this.isLoading = false;
           this.getFeedback();
         }, error: () => {
