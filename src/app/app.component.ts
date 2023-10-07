@@ -1,33 +1,46 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SidebarService } from './_services/sidebar/sidebar.service';
-
+import { Store } from '@ngrx/store';
+import * as fromApp from './store/app.reducer';
+import { State } from './auth/store/auth.reducer';
+import * as AuthActions from './auth/store/auth.actions';
+import { fadeInAnimation } from './shared/shared.module';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [fadeInAnimation]
 })
 export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;
-  public title = 'portfolio';
-  public isDisplay!:boolean;
-  public isLoading:boolean=false;
-  constructor(private sidebarService:SidebarService) {
-  }
+  public isLoading: boolean = true;
+  public isDisplay!: boolean;
+  public isAuthenticated!: boolean;
+  constructor(private sidebarService: SidebarService, private store: Store<fromApp.AppState>) { }
   ngOnInit(): void {
-    this.isLoading=true;
-    setTimeout(()=>{
-      this.isLoading=false;
-    },2400);
+    this.store.select('auth').subscribe({
+      next: (response: State) => {
+        this.isAuthenticated = !!response.user;
+      },
+      error: (error) => {
+      }
+    });
+    this.store.dispatch(AuthActions.autoLogin());
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 0);
   }
-  onSidebarChange(event: any) {
-    this.isDisplay=event;
+
+  onToggle(): void {
+    this.isDisplay = !this.isDisplay;
     this.sidebar.nativeElement.classList.toggle('show');
+    // this.sidebarEvent.emit(this.isDisplay);
   }
   onHideSidebar(): void {
     this.sidebar.nativeElement.classList.remove('show');
+    this.isDisplay = false;
     this.sidebarService.sidebarChanges.next(this.isDisplay);
   }
-  onLoad():void{
-    console.log("Loading! ");
+  onLoad(): void {
   }
 }

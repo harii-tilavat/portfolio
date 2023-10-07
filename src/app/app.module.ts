@@ -3,40 +3,42 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { HeroComponent } from './hero/hero.component';
-import { AboutComponent } from './about/about.component';
-import { AboutFactsComponent } from './about/about-facts/about-facts.component';
-import { ResumeComponent } from './resume/resume.component';
-import { SkillComponent } from './skill/skill.component';
-import { MyServiceComponent } from './my-service/my-service.component';
-import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AskProjectComponent } from './ask-project/ask-project.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
+import { ScrollSpyDirective } from './_directives/scrollspy.directive';
+import * as fromApp from 'src/app/store/app.reducer';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './auth/store/auth.effects';
+import { environment } from 'src/environments/environment.development';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from './shared/shared.module';
+import { ToggleSidebarDirective } from './_directives/toggle-sidebar/toggle-sidebar.directive';
+// import {} from ''
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    HeroComponent,
-    AboutComponent,
-    AboutFactsComponent,
-    ResumeComponent,
-    SkillComponent,
-    MyServiceComponent,
-    ContactComponent,
-    AskProjectComponent,
     FooterComponent,
     LoaderComponent,
+    ScrollSpyDirective,
+    ToggleSidebarDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(fromApp.appReducer),
+    BrowserAnimationsModule,
+    EffectsModule.forRoot(AuthEffects),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,19 +19,22 @@ export class ContactComponent implements OnInit, OnDestroy {
       id: 1,
       icon: 'fa-solid fa-map-location-dot',
       label: 'Location',
-      desc: 'Shekhpur, Velanja, Surat-Gujarat'
+      desc: 'Shekhpur, Velanja, Surat-Gujarat',
+      url:'https://www.instagram.com/harii_x08'
     },
     {
       id: 2,
       icon: 'fa-solid fa-envelope',
       label: 'Email',
-      desc: 'harittilavat10@gmail.com'
+      desc: 'harittilavat10@gmail.com',
+      url:'mailto:harittilavat10@gmail.com'
     },
     {
       id: 3,
       icon: 'fa-solid fa-phone',
       label: 'Phone',
-      desc: '+91 635695453'
+      desc: '+91 6356995453',
+      url:'https://wa.me/6356995453'
     },
   ];
   constructor(private contactService: ContactService) { }
@@ -48,8 +51,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     if (this.contactForm.valid) {
       this.clientName = this.contactForm.value.name;
       this.userSub = this.contactService.storeData(this.contactForm.value).subscribe();
-      this.contactForm.reset();
-      this.isSubmitted = false;
+      this.onReset();
     }
     return;
   }

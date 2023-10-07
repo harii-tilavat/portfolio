@@ -1,0 +1,140 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12">
+      <div class="form-head">
+        <div class="title">
+          <span>Give feedback</span>
+        </div>
+        <div class="sub-paragraph">
+          <p>Your thoughts matter to us! We're continuously striving to improve. Could you please take a moment to share
+            your feedback? We truly value your insights.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xxl-8 col-xl-10 col-lg-10 col-md-10 col-sm-12">
+      <div class="content">
+        <form action="" class="" [formGroup]="feedbackForm" (ngSubmit)="onSubmitFeedback()">
+          <div class="card">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="feedback-name" class="fw-semibold">Enter your name. </label>
+                <input type="text" class="form-control" id="feedback-name" formControlName="userName">
+                <div class="error-message" *ngIf="feedbackForm.controls['userName'].touched || isSubmitFeedback">
+                  <span class="error text-danger" *ngIf="feedbackForm.controls['userName'].errors?.['required']">
+                    Name Required!
+                  </span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="feedback-desc" class="fw-semibold">Enter your Feedback. </label>
+                <textarea name="" id="feedback-desc" rows="3" class="form-control" placeholder=""
+                  formControlName="userFeedback">
+                </textarea>
+                <div class="error-message" *ngIf="feedbackForm.controls['userFeedback'].touched || isSubmitFeedback">
+                  <span class="error text-danger"
+                    *ngIf="feedbackForm.controls['userFeedback'].errors?.['required']">Feedback Required!
+                  </span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="post-feedback">
+                  <button type="submit" class="btn post-btn btn-dark">
+                    <span class="me-2">{{'Post feedback'}}</span>
+                    <span *ngIf="isLoading"> <i class="fa fa-rotate rotate-round"></i></span>
+                  </button>
+                  <!-- <button type="submit" class="btn post-btn btn-dark">
+                    <span class="me-2">{{'Post feedback'}}</span>
+                    <span *ngIf="isLoading"> <i class="fa fa-rotate rotate-round"></i></span>
+                  </button> -->
+                </div>
+              </div>
+              <div class="form-group" *ngIf="errorMessage">
+                <div class="">
+                  <p class="alert alert-danger"> {{errorMessage}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="total-feedback mt-3" *ngIf="feedbackData.length!==0">
+            <h4>Feedback ({{feedbackData.length}})</h4>
+            <hr>
+          </div>
+        </form>
+        <div class="view-feedback">
+          <div class="row" *ngFor="let item of feedbackData">
+            <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">
+              <div class="icon-list">
+                <span class="icon"><img src="/assets/svg/user.svg" alt="" class="img-fluid"></span>
+              </div>
+            </div>
+            <div class="col-xxl-9 col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+              <div class="content border rounded p-4">
+                <div class="feddback-header d-flex align-items-center">
+                  <span class="feedback-title fs-5 fw-semibold">{{item.userName}}</span>
+                  <small class="ms-3">{{item.date | date}}</small>
+                </div>
+                <p>{{item.userFeedback}} </p>
+                <div *ngIf="false">
+                  <p class="view-reply" (click)="viewReply(item.id)" *ngIf="item.replyData">{{showReply &&
+                    item.id===selectedUser.id?'Hide Reply':'View all replies'}}</p>
+                </div>
+                <!-- -------------------------- Nested Row ------------------------ -->
+                <ng-container *ngFor="let subItem of item.replyData; let i=index">
+                  <div class="row" *ngIf="item.id===selectedUser?.id && showReply" [@fadeIn]>
+                    <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2 p-0">
+                      <div class="icon-list">
+                        <span class="icon">
+                          <img src="/assets/svg/user.svg" alt="profile-img" class="img-fluid">
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-10 col-10">
+                      <div class="content border rounded p-3">
+                        <div class="feddback-header">
+                          <span class="feedback-title fs-5 fw-semibold">{{subItem.userName}}</span>
+                          <small class="ms-3">{{subItem.date | date}}</small>
+                        </div>
+                        <p>{{subItem.userReply}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+                <div class="reply-btn" *ngIf="false">
+                  <button class="btn btn-dark" (click)="onReply(item.id!)" *ngIf="!reply" [@fadeIn]>REPLY</button>
+                </div>
+                <form *ngIf="reply && item.id===selectedUser.id" [@fadeIn] [formGroup]="replyForm"
+                  (ngSubmit)="onSubmitReply()">
+                  <div class="form-group">
+                    <label for="reply-name" class="fw-semibold">Enter Your Name</label>
+                    <input type="text" name="" id="reply-name" class="form-control" formControlName="userName">
+                    <div class="error-message" *ngIf="replyForm.controls['userName'].touched || isSubmitReply">
+                      <span class="error text-danger" *ngIf="replyForm.controls['userName'].errors?.['required']">Name
+                        Required!
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="reply-content" class="fw-semibold">Enter Your Reply </label>
+                    <textarea name="" id="reply-content" rows="2" class="form-control" formControlName="userReply">
+                    </textarea>
+                    <div class="error-message" *ngIf="replyForm.controls['userReply'].touched || isSubmitReply">
+                      <span class="error text-danger" *ngIf="replyForm.controls['userReply'].errors?.['required']">Reply
+                        Required!
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-dark">Post</button>
+                    <button type="button" class="btn btn-dark ms-3" (click)="reply=false">Cancle</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

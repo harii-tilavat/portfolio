@@ -23,7 +23,7 @@ export class AboutFactsComponent implements OnInit {
       icon:'fa fa-headphones fa-3x',
       clientCount:'24/7',
       feedback:'Hours of Support',
-      desc:'Committed to delivering customer service with 24/7 availability'
+      desc:'Customer service with 24/7 availability'
     },
     {
       icon:'fa-solid fa-people-group fa-3x',

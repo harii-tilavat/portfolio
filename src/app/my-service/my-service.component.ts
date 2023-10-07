@@ -12,13 +12,13 @@ export class MyServiceComponent implements OnInit{
       id:1,
       title:'Angular Developer',
       icon:'fa-brands fa-angular',
-      desc:'I have in-depth knowledge of Angular and Typescript, enabling me to build robust and scalable web applications.'
+      desc:'I have in-depth knowledge of Angular and Typescript, enabling me to build robust web applications.'
     },
     {
       id:2,
       title:'Web Development',
       icon:'fa-brands fa-html5',
-      desc:'I possess a strong command of HTML, CSS, and JavaScript, allowing me to create visually appealing and interactive websites.'
+      desc:'I possess a strong command of HTML, CSS, and JavaScript, allowing me to create interactive websites.'
     },
     {
       id:3,
@@ -30,13 +30,13 @@ export class MyServiceComponent implements OnInit{
       id:4,
       title:'Frameworks',
       icon:'fa-brands fa-react',
-      desc:"Whether it's jQuery, React, or Angular, I pride myself on writing clean and well-documented code that is maintainable and scalable in the long run."
+      desc:"Whether it's jQuery, React, or Angular, I pride myself on writing clean code that is maintainable and scalable in the long run."
     },
     {
       id:5,
       title:'Programming Languages',
       icon:'fa-brands fa-java',
-      desc:'I have a good knowledge of C, C++, Java and with my logical mindset, I can quickly identify code and deliver high-quality and reliable solutions.'
+      desc:'I have a good knowledge of C, C++, Java and with using this, I can quickly identify code and deliver high-quality solutions.'
     },
     {
       id:6,

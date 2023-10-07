@@ -1,12 +1,13 @@
 .contact {
-  // background-color: $light-grey;
   padding: 50px 0;
-  color-scheme: dark;
   .location-section {
     .content {
       .info {
         display: flex;
         margin-bottom: 1.5rem;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
         .icon {
           transition: 0.3s;
           height: 30px;
@@ -39,16 +40,13 @@
   .form-group {
     margin-bottom: 25px;
     .form-control {
-      // background: transparent;
       color: inherit;
       border-radius: 0;
+      background-color: transparent;
       &:focus {
         box-shadow: none;
         border-color: $main-color-light;
       }
-    }
-    .form-contro:-internal-autofill-selected {
-      background-color: red !important;
     }
     .form-label {
       font-weight: 500;
@@ -74,13 +72,5 @@
       // transform: scale(1.1);
     }
   }
-  .error-message {
-    position: relative;
-    font-size: 14px;
-    .error {
-      right: 0;
-      position: absolute;
-      color: red;
-    }
-  }
+
 }

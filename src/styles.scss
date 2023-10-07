@@ -1,14 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
-
-$main-color: #040b14;
+@import "node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+// $main-color: #040b14;
+$main-color: #111;
 $main-color-light: #149ddd;
 $partition: 300px;
 $main-title: #173b6c;
 $light-grey: #f5f8fd;
 $poppin: "Poppins", sans-serif;
-$p-color:#667085;
+$p-color: #667085;
+$border-light:#dee2e6;
+$border-dark:rgb(33,37,41);
+$box-shadow-blue: rgba(3, 102, 214, 0.3) 0px 0px 5px 3px;
+// Color
+$dark-100: #111;
+$dark-80: #252526;
+$dark-60: #333;
+$dark-40: #1e1e1e;
+$dark-20: #3e3e42;
 
 .bg-primary {
   background-color: $main-color !important;
@@ -37,6 +47,7 @@ $p-color:#667085;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 // ---------------------------------------------------------------------------
 //portfolio
@@ -47,6 +58,7 @@ $p-color:#667085;
   .main-panel {
     margin-left: $partition;
     width: 100%;
+    background-color: #f8f8f9;
   }
 }
 
@@ -70,19 +82,35 @@ $p-color:#667085;
 .sub-paragraph {
   margin-top: 20px;
 }
+.icon-list {
+  display: flex;
+  .icon {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+  }
+}
 
+@import './app/scss/main';
+// @import "/src/app/scss/sidebar";
+// @import "/src/app/scss/hero";
+// @import "/src/app/scss/about";
+// @import "/src/app/scss/facts";
+// @import "/src/app/scss/skill";
+// @import "/src/app/scss/resume";
+// @import "/src/app/scss/services";
+// @import "/src/app/scss/ask-project";
+// @import "/src/app/scss/contact";
+// @import "/src/app/scss/footer";
+// @import "/src/app/scss/loader";
+// @import "/src/app/scss/auth/auth-login";
+// @import "/src/app/scss/shared";
+// @import "/src/app/scss/dark-theme";
 
-@import "/src/app/scss/sidebar";
-@import "/src/app/scss/hero";
-@import "/src/app/scss/about";
-@import "/src/app/scss/facts";
-@import "/src/app/scss/skill";
-@import "/src/app/scss/resume";
-@import "/src/app/scss/services";
-@import "/src/app/scss/ask-project";
-@import "/src/app/scss/contact";
-@import "/src/app/scss/footer";
-@import "/src/app/scss/loader";
 // Media Query
 
 @media only screen and (max-width: 1199px) {

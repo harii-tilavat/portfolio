@@ -1,5 +1,5 @@
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("/assets/profile-img/hero-bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("/assets/profile-img/hero-bg1.webp");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -15,30 +15,10 @@
     .hire-me{
       background-color: white;
       // background: transparent;
-
       box-shadow: 0 0 10px $main-color-light;
       color: black;
     }
   }
-  .bar-btn {
-    position: fixed;
-    right: 15px;
-    top: 10px;
-    border-radius: 50px;
-    background: $main-color-light;
-    z-index: 1001;
-    height: 40px;
-    width: 40px;
-    justify-content: center;
-    align-items: center;
-    button {
-      color: white;
-      background-color: #149ddd;
-      border: none;
-    }
-  }
-
-
   .header-title {
     font-family: $poppin;
     .hero-name {

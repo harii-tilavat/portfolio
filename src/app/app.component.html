@@ -1,37 +1,26 @@
-<ng-container *ngIf="isLoading">
-  <app-loader></app-loader>
-</ng-container>
-<ng-container >
-  <div class="portfolio-section" [ngClass]="{'d-none': isLoading}" (load)="onLoad()">
-    <section class="sidebar" id="sidebar" #sidebar (click)="onHideSidebar()">
-      <app-sidebar></app-sidebar>
-    </section>
-    <section class="main-panel">
-      <section id="hero" class="hero">
-        <app-hero (sidebarEvent)="onSidebarChange($event)"></app-hero>
-      </section>
-      <section id="about" class="about">
-        <app-about></app-about>
-      </section>
-      <section id="skill" class="skill">
-        <app-skill></app-skill>
-      </section>
-      <section id="resume" class="resume">
-        <app-resume></app-resume>
-      </section>
-      <section id="services" class="services">
-        <app-my-service></app-my-service>
-      </section>
-      <section id="ask-project" class="ask-project">
-        <app-ask-project></app-ask-project>
-      </section>
-      <section id="contact" class="contact">
-        <app-contact></app-contact>
-      </section>
-      <section id="footer" class="footer">
-        <app-footer></app-footer>
-      </section>
-    </section>
-  </div>
+<div class="main-div" id="main-theme">
+  <ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
+  </ng-container>
 
-</ng-container>
+  <ng-container>
+    <div class="portfolio-section" [ngClass]="{'visually-hidden': isLoading}" >
+      <ng-container>
+        <div class="bar-btn">
+          <button class="" (click)="onToggle()"><i [class]="!isDisplay?'fa fa-bars':'fa-solid fa-xmark'"></i></button>
+        </div>
+      </ng-container>
+      <section class="sidebar" id="sidebar" #sidebar>
+        <app-sidebar (sidebarEvent)="onHideSidebar()"></app-sidebar>
+      </section>
+      <section class="main-panel" (click)="onHideSidebar()">
+        <div class="page-body" [@fadeIn]>
+          <router-outlet></router-outlet>
+        </div>
+        <section id="footer" class="footer">
+          <app-footer></app-footer>
+        </section>
+      </section>
+    </div>
+  </ng-container>
+</div>

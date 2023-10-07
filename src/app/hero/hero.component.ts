@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SidebarService } from '../_services/sidebar/sidebar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
@@ -9,7 +10,7 @@ import { SidebarService } from '../_services/sidebar/sidebar.service';
 export class HeroComponent implements OnInit {
   @Output() sidebarEvent = new EventEmitter<boolean>();
   public isDisplay:boolean=false;
-  constructor(private sidebarService:SidebarService) { }
+  constructor(private sidebarService:SidebarService, private router:Router) { }
   ngOnInit(): void {
     this.sidebarService.sidebarChanges.subscribe({
       next:(isDisplay:boolean)=>{
@@ -17,11 +18,8 @@ export class HeroComponent implements OnInit {
       }
     })
   }
-  onToggle():void{
-    this.isDisplay=!this.isDisplay;
-    this.sidebarEvent.emit(this.isDisplay);
-  }
   onClickTop():void{
-    document.getElementById('hero')?.scrollIntoView();
+    document.getElementById('home')?.scrollIntoView();
+    // this.router.navigate(['/home']);
   }
 }

@@ -1,0 +1,79 @@
+
+.dark-theme {
+  .title {
+    color: $main-color-light;
+  }
+
+  transition: 0.3s;
+  .sidebar {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background-color: $dark-100;
+    color: white;
+    .profile {
+      border-bottom: 1px solid $border-dark;
+    }
+  }
+
+  .main-panel {
+    background-color: $dark-60;
+    background-color: #2e2e2e;
+    color: white;
+    .light {
+      background-color: $dark-40;
+    }
+    .card {
+      border: 1px solid $border-light;
+    }
+    .resume {
+      .year {
+        background-color: $dark-100;
+      }
+    }
+    .ask-project {
+      background-color: inherit;
+      .btn.my-btn{
+        color: black;
+      }
+    }
+    .contact {
+      background-color: $dark-40;
+    }
+    .footer {
+      background-color: $dark-80;
+      color: $border-light;
+      .footer-content {
+        border-top: 1px solid transparent !important;
+      }
+    }
+    .auth-section {
+      color: white;
+      background-color: $dark-40;
+      .login-form {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        .form-control {
+          color: white;
+          box-shadow: none;
+        }
+        .form-control:focus {
+          background-color: $dark-80;
+        }
+        .form-check-input {
+          border: 1px solid white;
+        }
+        .submit-btn{
+          background-color: #f0f0f0;
+          color: $dark-100;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 775px) {
+  .dark-theme {
+    .auth-section {
+      .login-form {
+        box-shadow: none !important;
+      }
+    }
+  }
+}

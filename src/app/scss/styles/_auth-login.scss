@@ -1,0 +1,54 @@
+.form-control, .form-check-input{
+  background-color: transparent;
+}
+.auth-section {
+  // height: calc(100vh - 65px);
+  height: 100vh;
+  // overflow: scroll;
+  color: $main-color;
+  a{
+    color: inherit;
+  }
+  .auth-login {
+    height: 100%;
+    .login-section {
+      .login-form {
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+          rgba(17, 17, 26, 0.1) 0px 8px 24px,
+          rgba(17, 17, 26, 0.1) 0px 16px 48px;
+        border-radius: 10px;
+        max-width: 700px;
+        .forgot-pass {
+          text-decoration: underline;
+        }
+        .submit-btn{
+          background-color: $main-color;
+          color: #f0f0f0;
+          font-weight: 500;
+        }
+        .google-logo {
+          .auth-btn {
+            display: flex;
+            justify-content: center;
+            font-weight: 500;
+            .google-svg {
+              height: 20px;
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width:775px) {
+  .auth-section {
+    .auth-login {
+      .login-section {
+        .login-form {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

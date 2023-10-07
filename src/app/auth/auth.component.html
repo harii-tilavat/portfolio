@@ -1,0 +1,107 @@
+<div class="auth-section" [@fadeIn]>
+  <div class="auth-login d-flex-center">
+    <div class="login-section ">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-12">
+            <div class="login-form p-sm-5 p-4">
+              <form action="" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+                <div class="form-head text-center py-2">
+                  <p class="h6"><i class="fa-solid fa-3x fa-right-to-bracket"></i></p>
+                  <p class="h1">{{loginMode?'Login Here':'Sign up Here'}}</p>
+                  <p>Securely {{loginMode?'Login':'Sign up'}} to your account and explore a personalized experience
+                    tailored just for you.!</p>
+                </div>
+                <div class="form-body">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Enter Email</label>
+                    <input type="text" class="form-control" id="email" formControlName="email">
+                    <div class="error-message" *ngIf="authForm.controls['email'].touched || isSubmitted ">
+                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['required']">Email
+                        Required!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['email']">Invalid
+                        Email!</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="current-password" class="form-label">Enter Password</label>
+                    <input type="password" class="form-control" id="current-password" formControlName="password">
+                    <div class="error-message" *ngIf="authForm.controls['password'].touched || isSubmitted">
+                      <span class="error text-danger"
+                        *ngIf="authForm.controls['password'].errors?.['required']">Password Required!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['password'].errors?.['minlength']">Weak
+                        Password!</span>
+                    </div>
+                  </div>
+                  <div class="form-group d-flex-between mt-4">
+                    <div class="check-btn">
+                      <input type="checkbox" class="form-check-input">
+                      <label for="remember" class="form-check-label remember ms-2"> Remember me</label>
+                    </div>
+                    <div class="forgot-pass" *ngIf="false">
+                      <a class="">Forgot Password</a>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="submit">
+                      <button type="submit" class="btn submit-btn w-100" type="submit">
+                        <span *ngIf="isLoading"> <i class="fa fa-rotate rotate-round"></i></span>
+                        <span class="ms-2">{{loginMode?'Login':'Sign up'}}</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-group" *ngIf="loginMode">
+                    <div class="google-logo">
+                      <button type="button" class="btn border form-control auth-btn" (click)="onGoogleSignin()">
+                        <div class="google-svg">
+                          <span>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                              class="LgbsSe-Bz112c">
+                              <g>
+                                <path fill="#EA4335"
+                                  d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z">
+                                </path>
+                                <path fill="#4285F4"
+                                  d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z">
+                                </path>
+                                <path fill="#FBBC05"
+                                  d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z">
+                                </path>
+                                <path fill="#34A853"
+                                  d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z">
+                                </path>
+                                <path fill="none" d="M0 0h48v48H0z"></path>
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="sign-in-google ms-2">
+                          <span>{{loginMode? 'Sign in':'Sign up'}} with Google</span>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-group text-center">
+                    <p (click)="onChangeMode()">
+                      {{loginMode?"Don't have":"Have"}} an account ? <a class="auth-mode">
+                        {{loginMode?"Signup":"Login"}}</a>
+                    </p>
+                  </div>
+                  <div class="alert-group">
+                    <div class="alert-toast w-100 " *ngIf="error">
+                      <div class="alert alert-danger">
+                        {{error}}!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-container>
+    <!-- Flexbox container for aligning the toasts -->
+  </ng-container>
