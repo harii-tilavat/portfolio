@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
   onToggle(): void {
     this.isDisplay = !this.isDisplay;
     this.sidebar.nativeElement.classList.toggle('show');
+
     // this.sidebarEvent.emit(this.isDisplay);
   }
   onHideSidebar(): void {

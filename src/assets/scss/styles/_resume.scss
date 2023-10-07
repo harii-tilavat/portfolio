@@ -26,8 +26,9 @@
       .year {
         padding: 5px 10px;
         display: inline-block;
-        background-color: #e4edf9;
-        font-size: 16px;
+        // background-color: #e4edf9;
+        background-color: $gray-100;
+        font-size: 14px;
       }
 
       border-left: 2px solid $main-color;

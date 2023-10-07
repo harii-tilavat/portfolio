@@ -18,10 +18,10 @@
           padding: 25px;
         }
         &:hover {
-         .icon{
-          background-color: $main-color-light;
-          color: white;
-         }
+          .icon {
+            background-color: $main-color-light;
+            color: white;
+          }
         }
         .content-info {
           display: flex;
@@ -31,28 +31,17 @@
       }
     }
     .image-section {
-      .location-img{
+      .location-img {
         max-width: 70%;
       }
     }
   }
 
   .form-group {
-    margin-bottom: 25px;
     .form-control {
-      color: inherit;
-      border-radius: 0;
-      background-color: transparent;
-      &:focus {
-        box-shadow: none;
-        border-color: $main-color-light;
-      }
     }
-    .form-label {
-      font-weight: 500;
-      span {
-        color: red;
-      }
+    span {
+      color: red;
     }
     .my-btn {
       color: white;
@@ -72,5 +61,4 @@
       // transform: scale(1.1);
     }
   }
-
 }

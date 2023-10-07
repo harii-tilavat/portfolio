@@ -4,26 +4,30 @@
       <span>Specilized in</span>
     </div>
     <div class="sub-paragraph">
-      <p>Continuously learning and keeping up-to-date with the latest frontend trends and best practices to deliver modern and innovative web solutions. Skilled in integrating APIs and handling asynchronous data using Angular</p>
+      <p>Continuously learning and keeping up-to-date with the latest frontend trends and best practices to deliver
+        modern and innovative web solutions. Skilled in integrating APIs and handling asynchronous data using Angular
+      </p>
     </div>
   </div>
   <div class="offers">
     <div class="row">
-      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12  py-3" *ngFor="let item of serviceList; ">
-        <div class="service-card card p-4 h-100">
-          <div class="icon-info">
-            <div class="icon d-flex-center">
-              <span>
-                <i [class]="item.icon"></i>
-              </span>
+      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12  py-4" *ngFor="let item of serviceList; ">
+        <div class="service-card card h-100">
+          <div class="service-card-body p-4">
+            <div class="icon-info">
+              <div class="icon d-flex-center">
+                <span>
+                  <i [class]="item.icon"></i>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="content mt-4">
-            <div class="offer-title">
-              <span>{{item.title}}</span>
-            </div>
-            <div class="desc">
-              <p>{{item.desc}} </p>
+            <div class="content mt-4">
+              <div class="offer-title">
+                <span>{{item.title}}</span>
+              </div>
+              <div class="desc">
+                <p>{{item.desc}} </p>
+              </div>
             </div>
           </div>
         </div>

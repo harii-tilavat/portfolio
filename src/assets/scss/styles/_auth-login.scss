@@ -24,13 +24,13 @@
         .submit-btn{
           background-color: $main-color;
           color: #f0f0f0;
-          font-weight: 500;
+          font-family: $inter-medium;
         }
         .google-logo {
           .auth-btn {
             display: flex;
             justify-content: center;
-            font-weight: 500;
+            font-family: $inter-medium;
             .google-svg {
               height: 20px;
               width: 20px;
