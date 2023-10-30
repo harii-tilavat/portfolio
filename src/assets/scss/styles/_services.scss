@@ -1,0 +1,43 @@
+.services {
+  padding: 50px 0;
+  background: $light-grey;
+  .offer-title {
+    font-weight: bold;
+  }
+  .offers {
+    padding: 20px 0;
+    .service-card {
+      border-radius: 0 30px 0 0;
+      @include box-shadow-card(bottom);
+      position: relative;
+      .service-card-body {
+        .icon-info {
+          position: absolute;
+          top: -25px;
+          display: block;
+          left: 25px;
+          .icon {
+            transition: 0.3s;
+            font-size: 25px;
+            display: flex;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            background-color: $main-color-light;
+            border-radius: 10px;
+            color: white;
+
+            padding: 25px;
+            border: 2px solid $main-color-light;
+          }
+        }
+        &:hover {
+          .icon {
+            background-color: white;
+            color: $main-color-light;
+          }
+        }
+      }
+    }
+  }
+}
