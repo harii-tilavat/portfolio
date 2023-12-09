@@ -9,13 +9,13 @@ export class AboutFactsComponent implements OnInit {
   public clientsMenu=[
     {
       icon:'fa fa-regular fa-smile fa-3x',
-      clientCount:32,
+      clientCount:2,
       feedback:'Happy Clients',
       desc:'I had a wonderful experience working with my clients'
     },
     {
       icon:'fa-solid fa-history fa-3x',
-      clientCount:'12+',
+      clientCount:'5+',
       feedback:'Projects',
       desc:'I have created more than 12 Projects!'
     },

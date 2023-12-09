@@ -81,18 +81,18 @@ export class SidebarComponent implements OnInit {
       routing: 'contact',
       className: 'fa-solid fa-phone',
     },
-    {
-      id: 6,
-      label: 'Login',
-      routing: '/auth',
-      className: 'fa-solid fa-right-to-bracket',
-    },
-    {
-      id: 7,
-      label: 'Logout',
-      routing: '/auth',
-      className: 'fa-solid fa-right-to-bracket',
-    },
+    // {
+    //   id: 6,
+    //   label: 'Login',
+    //   routing: '/auth',
+    //   className: 'fa-solid fa-right-to-bracket',
+    // },
+    // {
+    //   id: 7,
+    //   label: 'Logout',
+    //   routing: '/auth',
+    //   className: 'fa-solid fa-right-to-bracket',
+    // },
   ]
   constructor(private store: Store<fromApp.AppState>, private router: Router) { }
   ngOnInit(): void {

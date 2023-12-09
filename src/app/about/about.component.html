@@ -34,7 +34,12 @@
                   <li *ngFor="let subItem of item.subMenu">
                     <i class="fa fa-chevron-right"></i>
                     <span class="bio-title">{{subItem.bioLabel}}:</span>
-                    <span>{{subItem.bioDetail}}</span>
+                    <ng-container *ngIf="!subItem.link; else goToLink">
+                      <span>{{subItem.bioDetail}}</span>
+                    </ng-container>
+                    <ng-template #goToLink>
+                      <a [href]="subItem.link" target="_blank">{{subItem.bioDetail}}</a>
+                    </ng-template>
                   </li>
                 </ul>
               </div>

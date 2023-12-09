@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  public bioList:{subMenu:{id:number,bioLabel:string,bioDetail:string}[]}[] = [
+  public bioList:{subMenu:{id:number,bioLabel:string,bioDetail:string,link?:string}[]}[] = [
     {
       subMenu: [
         {
@@ -18,6 +18,7 @@ export class AboutComponent implements OnInit {
           id: 2,
           bioLabel: 'Website',
           bioDetail: 'hariitilavat.web.app',
+          link:'https://hariitilavat.web.app/'
         },
         {
           id: 3,

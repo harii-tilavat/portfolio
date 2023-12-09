@@ -16,7 +16,7 @@
     <div class="col-xxl-8 col-xl-10 col-lg-10 col-md-10 col-sm-12">
       <div class="content">
         <form action="" class="" [formGroup]="feedbackForm" (ngSubmit)="onSubmitFeedback()">
-          <div class="card">
+          <div class="card px-3">
             <div class="card-body">
               <div class="form-group">
                 <label for="feedback-name" class="control-label">Enter your name. </label>
@@ -58,7 +58,7 @@
             </div>
           </div>
           <div class="total-feedback mt-3" *ngIf="feedbackData.length!==0">
-            <h4>Feedback ({{feedbackData.length}})</h4>
+            <span class="font-semibold ">Feedback ({{feedbackData.length}})</span>
             <hr>
           </div>
         </form>
