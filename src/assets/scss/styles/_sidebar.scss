@@ -4,7 +4,8 @@
   position: fixed;
   background-color: #fff;
   color: black;
-  overflow-y: auto;
+  // overflow-y: auto;
+  overflow-y: hidden;
   height: 100vh;
   transition: 0.3s;
   z-index: 1000;
