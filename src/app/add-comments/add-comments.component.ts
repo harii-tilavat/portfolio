@@ -20,6 +20,7 @@ export class AddCommentsComponent implements OnInit {
   public isSubmitReply: boolean = false;
   public isSubmitFeedback: boolean = false;
   public feedbackData: UserFeedbackModel[] = [];
+  public showFeedbackData!:Array<UserFeedbackModel>;
   public errorMessage!: string;
   public isLoading: boolean = false;
   public selectedUser!: UserFeedbackModel;
@@ -91,8 +92,13 @@ export class AddCommentsComponent implements OnInit {
     this.userService.getFeedbackData().subscribe({
       next: (response: UserFeedbackModel[]) => {
         this.feedbackData = response;
+        this.showFeedbackData=this.feedbackData.slice(0,3);
+        console.log("FeedbackData :", this.showFeedbackData);
         console.log("Reply Data:", response);
       }
     });
+  }
+  loadMore():void{
+
   }
 }

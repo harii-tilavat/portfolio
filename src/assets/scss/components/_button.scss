@@ -16,6 +16,11 @@
     @include font-size(16px);
     letter-spacing: 0.32px;
   }
+  &.btn-xs {
+    padding: 10px 15px;
+    @include font-size(10px);
+    letter-spacing: 0.32px;
+  }
   &.btn-transparent {
     @include button-size(
       0.8125rem,

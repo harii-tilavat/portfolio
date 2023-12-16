@@ -12,7 +12,7 @@ body {
     background-color: t($bg-color);
   }
   &.announce {
-    padding-top: calc(80px + 37px);
+    // padding-top: calc(80px + 37px);
   }
 }
 div,
@@ -30,9 +30,9 @@ span {
 }
 @include media-breakpoint-down(sm) {
   body {
-    padding-top: 75px;
+    // padding-top: 75px;
     &.announce {
-      padding-top: calc(75px + 62px);
+      // padding-top: calc(75px + 62px);
     }
   }
 }
