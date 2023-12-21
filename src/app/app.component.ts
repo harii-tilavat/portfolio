@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch(AuthActions.autoLogin());
     setTimeout(() => {
       this.isLoading = false;
-    }, 0);
+    }, 2500);
     setTimeout(() => {
       scrollTo(this.sidebar.nativeElement, { top: 500 }).then(() => {});
     }, 2000);
