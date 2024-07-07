@@ -6,7 +6,6 @@ import { State } from '../auth/store/auth.reducer';
 import { Router } from '@angular/router';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedinIn, faGithub, faSkype } from '@fortawesome/free-brands-svg-icons';
-import { scrollIntoView, scrollTo } from 'node_modules/scroll-js/dist/scroll';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
