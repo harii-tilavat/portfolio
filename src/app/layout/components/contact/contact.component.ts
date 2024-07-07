@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ContactService } from 'src/app/_services';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -37,7 +36,7 @@ export class ContactComponent implements OnInit, OnDestroy {
       url: 'https://wa.me/6356995453'
     },
   ];
-  constructor(private contactService: ContactService, private snakeBar: MatSnackBar) { }
+  constructor(private contactService: ContactService) { }
   ngOnInit(): void {
     this.contactForm = new FormGroup({
       name: new FormControl(null, [Validators.required]),
@@ -51,7 +50,8 @@ export class ContactComponent implements OnInit, OnDestroy {
     if (this.contactForm.valid) {
       this.clientName = this.contactForm.value.name;
       this.userSub = this.contactService.storeData(this.contactForm.value).subscribe(() => {
-        this.snakeBar.open('Form submitted Successfully!', 'Ok', { duration: 2000 });
+        // this.snakeBar.open('Form submitted Successfully!', 'Ok', { duration: 2000 });
+        alert('Form submitted Successfully!');
       });
       this.onReset();
     }

@@ -13,7 +13,7 @@ import { fadeInAnimation } from './shared/shared.module';
 export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;
   public title: string = 'Portfolio';
-  public isLoading: boolean = true;
+  public isLoading: boolean = false;
   public isDisplay!: boolean;
   public isAuthenticated!: boolean;
   constructor(private sidebarService: SidebarService) { }

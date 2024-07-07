@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout.routing';
 import { HeroComponent } from './components/hero/hero.component';
@@ -11,6 +10,7 @@ import { AddCommentsComponent } from './components/add-comments/add-comments.com
 import { AskProjectComponent } from './components/ask-project/ask-project.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 

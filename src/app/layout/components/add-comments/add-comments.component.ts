@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserFeedbackModel } from 'src/app/_model';
 import { UserService } from 'src/app/_services';
 import { fadeInAnimation } from 'src/app/shared/shared.module';
@@ -24,7 +23,7 @@ export class AddCommentsComponent implements OnInit {
   public errorMessage!: string;
   public isLoading: boolean = false;
   public selectedUser!: UserFeedbackModel;
-  constructor(private snakeBar: MatSnackBar, private userService: UserService) { }
+  constructor( private userService: UserService) { }
   ngOnInit(): void {
     this.date = new Date();
     this.feedbackForm = new FormGroup({
@@ -44,7 +43,8 @@ export class AddCommentsComponent implements OnInit {
       this.isLoading = true;
       this.userService.storeUserFeedback(this.feedbackForm.value).subscribe({
         next: () => {
-          this.snakeBar.open(`Thank you ${this.feedbackForm.value.userName} for your feedback!`, 'Ok', { duration: 2500 });
+          // this.snakeBar.open(`Thank you ${this.feedbackForm.value.userName} for your feedback!`, 'Ok', { duration: 2500 });
+          alert(`Thank you ${this.feedbackForm.value.userName} for your feedback!`);
           this.isLoading = false;
           this.getFeedback();
         }, error: () => {
@@ -69,11 +69,12 @@ export class AddCommentsComponent implements OnInit {
   onSubmitReply(): void {
     this.userService.updateFeedbackData(this.selectedUser.id, this.replyForm.value).subscribe({
       next: (response: any) => {
-        this.snakeBar.open('Reply sent Successfully', 'Ok', { duration: 2500 });
+        alert("Reply sent Successfully");
+        // this.snakeBar.open('Reply sent Successfully', 'Ok', { duration: 2500 });
         this.getFeedback();
       },
       error: (error) => {
-        this.snakeBar.open(error, 'ok');
+        alert(error);
       },
       complete: () => {
         this.resetForm();

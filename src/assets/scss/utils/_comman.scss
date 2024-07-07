@@ -9,7 +9,7 @@ body {
   overflow: auto;
   @include themed {
     color: t($text-color);
-    background-color: t($bg-color);
+    background-color: t($bg-color-light);
   }
   &.announce {
     // padding-top: calc(80px + 37px);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceListModel } from '../_model';
+import { ServiceListModel } from 'src/app/_model';
 
 @Component({
   selector: 'app-my-service',
