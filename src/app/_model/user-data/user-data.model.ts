@@ -11,5 +11,5 @@ export interface UserFeedbackModel {
   userFeedback?: string,
   userReply?: UserFeedbackModel[],
   date?: Date,
-  replyData?:UserFeedbackModel[]
+  replyData?:UserFeedbackModel[];
 }

@@ -1,8 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as fromApp from 'src/app/store/app.reducer';
-import * as AuthActions from '../auth/store/auth.actions';
-import { State } from '../auth/store/auth.reducer';
+import * as AuthActions from '../../auth/store/auth.actions';
+import { State } from '../../auth/store/auth.reducer';
 import { Router } from '@angular/router';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedinIn, faGithub, faSkype } from '@fortawesome/free-brands-svg-icons';
@@ -93,13 +92,8 @@ export class SidebarComponent implements OnInit {
     //   className: 'fa-solid fa-right-to-bracket',
     // },
   ]
-  constructor(private store: Store<fromApp.AppState>, private router: Router) { }
+  constructor(private router: Router) { }
   ngOnInit(): void {
-    this.store.select('auth').subscribe({
-      next: (resData: State) => {
-        this.isAuthenticated = !!resData.user;
-      }
-    });
   }
   onRouting(index: number, routingValue: string, label: string) {
     this.sidebarEvent.emit(false);
@@ -107,12 +101,6 @@ export class SidebarComponent implements OnInit {
       document.getElementById(routingValue)?.scrollIntoView();
     }, 20);
     this.activeRouteId = index;
-    if (label === 'Logout') {
-      if (confirm('Are you sure')) {
-        this.store.dispatch(AuthActions.logout());
-        return;
-      }
-    }
   }
   onThemeChange(): void {
     this.themeClass = this.themeClass === 'dark' ? 'light' : 'dark';

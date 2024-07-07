@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInAnimation } from '../shared/shared.module';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../_services';
-import { User, UserFeedbackModel } from '../_model';
+import { UserFeedbackModel } from 'src/app/_model';
+import { UserService } from 'src/app/_services';
+import { fadeInAnimation } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-add-comments',

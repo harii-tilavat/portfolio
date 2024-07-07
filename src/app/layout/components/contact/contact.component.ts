@@ -1,9 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ContactService } from '../_services';
-import { UserDataModel } from '../_model';
 import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ContactService } from 'src/app/_services';
 
 @Component({
   selector: 'app-contact',
