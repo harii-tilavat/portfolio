@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="contact-head">
+        <div class="title">
+          <span> Contact me</span>
+        </div>
+        <div class="sub-paragraph">
+          <p> Thank you for taking the time to review my profile. If you have any inquiries, project proposals, or would
+            simply like to connect, I would love to hear from you. Feel free to reach out using the contact information
+            below, and I'll get back to you as soon as possible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row py-3">
+    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
+      <div class="location-section">
+        <div class="content">
+          <a [href]="item.url" target="_blank" class="info" *ngFor="let item of contactList">
+              <div class="icon d-flex-center">
+                <span>
+                  <i [class]="item.icon"></i>
+                </span>
+              </div>
+              <div class="content-info">
+                <span class=" font-semibold ">{{item.label}} </span>
+                <span>{{item.desc}} </span>
+              </div>
+          </a>
+        </div>
+        <div class="image-section">
+          <div class="location-img">
+            <span>
+              <img src="/assets/svg/location.svg" alt="SVJ not found" class="img-fluid">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 mt-lg-0 mt-5">
+      <div class="contact-us">
+        <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xxl-6 col-xl-6 col-sm-6 col-md-6 col-sm-12">
+                <div class="name-info mb-4 mb-md-0">
+                  <label for="name" class="control-label">Name <span>*</span> </label>
+                  <input type="text" class="form-control" id="name" formControlName="name">
+                  <div class="error-message" *ngIf="contactForm.controls['name'].touched || isSubmitted">
+                    <span class="error" *ngIf="contactForm.controls['name'].errors?.['required']">Name
+                      required!</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-sm-6 col-md-6 col-sm-12">
+                <div class="email-info ">
+                  <label for="email" class="control-label">Email <span>*</span> </label>
+                  <input type="email" class="form-control" id="email" formControlName="email">
+                  <div class="error-message" *ngIf="contactForm.controls['email'].touched || isSubmitted">
+                    <span class="error" *ngIf="contactForm.controls['email'].errors?.['required']">Email
+                      required!</span>
+                    <span class="error" *ngIf="contactForm.controls['email'].errors?.['email']">Enter valid
+                      email!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject" class="control-label">Subject <span>*</span> </label>
+            <input type="text" class="form-control" id="subject" formControlName="subject">
+            <div class="error-message" *ngIf="contactForm.controls['subject'].touched || isSubmitted ">
+              <span class="error" *ngIf="contactForm.controls['subject'].errors?.['required']">Subject
+                required!</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" class="control-label">Message <span>*</span> </label>
+            <textarea name="" id="message" rows="8" class="form-control" formControlName="message"></textarea>
+            <div class="error-message" *ngIf="contactForm.controls['message'].touched || isSubmitted">
+              <span class="error" *ngIf="contactForm.controls['message'].errors?.['required']">
+                Message required!
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-submit ">
+              <button type="submit" class="btn btn-primary submit">Send message</button>
+              <!-- <button type="reset" class="btn btn-primary mx-3" (click)="onReset()">Reset</button> -->
+            </div>
+          </div>
+          <div class="form-group" *ngIf="clientName">
+            <div class="form-submit text-center">
+              <p>Thank you<span class="fw-bold"> {{clientName}}! </span> We will contact you as soon as Possible. </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

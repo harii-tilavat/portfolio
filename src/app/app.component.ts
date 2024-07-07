@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SidebarService } from './_services/sidebar/sidebar.service';
 import { Store } from '@ngrx/store';
-import * as fromApp from './store/app.reducer';
 import { State } from './auth/store/auth.reducer';
 import * as AuthActions from './auth/store/auth.actions';
 import { fadeInAnimation } from './shared/shared.module';
@@ -13,22 +12,12 @@ import { fadeInAnimation } from './shared/shared.module';
 })
 export class AppComponent implements OnInit {
   @ViewChild('sidebar') sidebar!: ElementRef;
-  public isLoading: boolean = true;
+  public title: string = 'Portfolio';
+  public isLoading: boolean = false;
   public isDisplay!: boolean;
   public isAuthenticated!: boolean;
-  constructor(private sidebarService: SidebarService, private store: Store<fromApp.AppState>) { }
+  constructor(private sidebarService: SidebarService) { }
   ngOnInit(): void {
-    this.store.select('auth').subscribe({
-      next: (response: State) => {
-        this.isAuthenticated = !!response.user;
-      },
-      error: (error) => {
-      }
-    });
-    this.store.dispatch(AuthActions.autoLogin());
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 2500);
   }
 
   onToggle(): void {

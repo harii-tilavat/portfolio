@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="title-head">
+    <div class="title">
+      <span>About</span>
+    </div>
+  </div>
+  <div class="title-paragraph ">
+    <p class="sub-paragraph"> Hi, I'm <span class="font-semibold">Harit Tilavat </span>, an experienced Angular developer
+      with a strong passion for creating interactive and user-friendly web applications.</p>
+  </div>
+  <div class="title-content my-4">
+    <div class="row">
+      <div class="col-xxl-4 col-xl-4 col-lg-4  col-md-4 col-sm-12 my-2">
+        <span>
+          <img src="/assets/profile-img/profile1.jpg" alt="" class="img-fluid">
+        </span>
+      </div>
+      <div class="col-xxl-8 col-xl-8 col-lg-8  col-12 my-2">
+        <div class="about-title">
+          <h3 >UI/UX Designer and Developer</h3>
+        </div>
+        <div class="about-paragraph">
+          <p>
+            If you are looking for a dedicated UI/UX designer who can transform your ideas into visually stunning and
+            user-friendly interfaces. Let's work
+            together to create impactful experiences that leave a lasting impression.
+          </p>
+        </div>
+        <div class="about-bio">
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" *ngFor="let item of bioList">
+              <div class="bio-content my-2">
+                <ul class="m-0 p-0">
+                  <li *ngFor="let subItem of item.subMenu">
+                    <i class="fa fa-chevron-right"></i>
+                    <span class="bio-title">{{subItem.bioLabel}}:</span>
+                    <ng-container *ngIf="!subItem.link; else goToLink">
+                      <span>{{subItem.bioDetail}}</span>
+                    </ng-container>
+                    <ng-template #goToLink>
+                      <a [href]="subItem.link" target="_blank">{{subItem.bioDetail}}</a>
+                    </ng-template>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-paragraph mt-3">
+          <p>
+            "Web development is my passion, my playground, and my endless source of curiosity. There's always something
+            new to learn and explore."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="facts">
+    <div class="fact-title">
+      <h3 class="title">Facts</h3>
+    </div>
+    <div class="fact-paragraph">
+      <p class="sub-paragraph">Ability to troubleshoot and debug web applications, ensuring functionality and optimal performance.</p>
+    </div>
+    <div class="fact-clients mt-5">
+      <div class="row">
+        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let item of clientsMenu">
+          <div class="fact-content p-md-1 p-3">
+            <div class="icon">
+              <i [class]="item.icon"></i>
+            </div>
+            <div class="content-info d-flex flex-column">
+              <span class="h1  ">{{item.clientCount}}</span>
+              <strong>{{item.feedback}}</strong>
+              <p>{{item.desc}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</div>

@@ -1,24 +1,9 @@
 .ask-project {
-  background-color: $main-color-light;
-  color: white;
+  background-color: $primary-300;
+  color: $gray-900;
   text-align: center;
   padding: 50px 0;
   .content-info {
     padding-bottom: 20px;
-  }
-  .btn.my-btn {
-    color: $main-color-light;
-    background-color: white;
-    transition: 0.3s;
-    border-radius: 50px;
-    padding: 10px 25px;
-    font-family: $inter-semibold;
-    border: 2px solid white;
-    &:hover {
-      // color: white;
-      // background-color: $main-color-light;
-      transform: scale(1.07);
-      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
-    }
   }
 }

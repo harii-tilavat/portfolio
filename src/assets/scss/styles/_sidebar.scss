@@ -2,8 +2,8 @@
 .sidebar {
   width: $partition;
   position: fixed;
-  background-color: #fff;
-  color: black;
+  background-color: $primary-25;
+  // color: black;
   // overflow-y: auto;
   overflow-y: hidden;
   height: 100vh;

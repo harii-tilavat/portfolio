@@ -1,6 +1,8 @@
 $bg-color: "bg-color";
 $text-color: "text-color";
-$dark-black: "dark-black";
+$bg-color-light: "bg-color-light";
+// $dark-black: "dark-black";
+// $dark-black: "dark-black";
 // input prop
 $input-border: "input-border";
 $input-control-label: "input-control-label";
@@ -17,10 +19,15 @@ $switch-bg: "switch-bg";
 $switch-border: "switch-border";
 $switch-color: "switch-color";
 
+// card
+$ngt-card: "ngt-card";
+
 $themes: (
   light: (
     bg-color: $primary-25,
+    bg-color-light: $gray-50,
     text-color: $gray-900,
+    ngt-card: $primary-25,
     input-border: $primary-200,
     input-control-label: $gray-700,
     ngt-warning: $yellow-700,
@@ -28,24 +35,22 @@ $themes: (
     ngt-inverse: $primary-25,
     ngt-inverse-dark: $gray-900,
     ngt-secondary: $primary-300,
-    switch-bg: $gray-400,
-    switch-border: $gray-400,
-    switch-color: $primary-600
+    switch-border:$gray-100
   ),
   dark: (
     bg-color: $gray-900,
+    bg-color-light: $gray-900,
     text-color: $primary-25,
-    input-border: $gray-200,
-    input-control-label: $gray-700,
+    ngt-card: $gray-700,
+    input-border: $gray-400,
+    input-control-label: $primary-50,
     ngt-warning: $yellow-700,
     ngt-danger: $red-600,
     ngt-inverse: $gray-900,
     ngt-inverse-dark: $primary-25,
     ngt-secondary: $primary-300,
-    switch-bg: $gray-400,
-    switch-border: $gray-400,
-    switch-color: $primary-600
-  )
+    switch-border:$gray-400
+  ),
 );
 
 @mixin themed() {
@@ -57,7 +62,7 @@ $themes: (
         $theme-map: map-merge(
           $theme-map,
           (
-            $key: $value
+            $key: $value,
           )
         ) !global;
       }
