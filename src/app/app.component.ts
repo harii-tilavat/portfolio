@@ -5,6 +5,7 @@ import * as fromApp from './store/app.reducer';
 import { State } from './auth/store/auth.reducer';
 import * as AuthActions from './auth/store/auth.actions';
 import { fadeInAnimation } from './shared/shared.module';
+import { scrollIntoView, scrollTo } from 'node_modules/scroll-js/dist/scroll';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,13 +29,15 @@ export class AppComponent implements OnInit {
     this.store.dispatch(AuthActions.autoLogin());
     setTimeout(() => {
       this.isLoading = false;
-    }, 0);
+    }, 2500);
+    setTimeout(() => {
+      scrollTo(this.sidebar.nativeElement, { top: 500 }).then(() => {});
+    }, 2000);
   }
 
   onToggle(): void {
     this.isDisplay = !this.isDisplay;
     this.sidebar.nativeElement.classList.toggle('show');
-
     // this.sidebarEvent.emit(this.isDisplay);
   }
   onHideSidebar(): void {

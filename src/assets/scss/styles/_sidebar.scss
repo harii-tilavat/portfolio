@@ -4,7 +4,8 @@
   position: fixed;
   background-color: #fff;
   color: black;
-  overflow-y: auto;
+  // overflow-y: auto;
+  overflow-y: hidden;
   height: 100vh;
   transition: 0.3s;
   z-index: 1000;
@@ -40,7 +41,7 @@
 
     .profile-name {
       .name {
-        font-family: $inter-medium;
+        font-family: $sora-medium;
         // color: #173b6c;
       }
     }

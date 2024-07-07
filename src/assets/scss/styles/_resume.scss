@@ -6,6 +6,9 @@
 
     .resume-title {
       margin-bottom: 25px;
+      h3{
+        font-family: $inter-semibold;
+      }
     }
     .resume-item {
       margin-bottom: 25px;
@@ -45,9 +48,9 @@
       padding-left: 15px;
 
       .resume-sub-title {
-        font-family: $poppin;
+        // font-family: $poppin;
+        font-family: $sora-semibold;
         font-size: 18px;
-        font-weight: bold;
         text-transform: uppercase;
       }
     }

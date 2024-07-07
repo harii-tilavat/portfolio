@@ -37,6 +37,11 @@ export class SkillComponent implements OnInit {
       label: 'PHP',
       per: '75%'
     },
+    {
+      id: 7,
+      label: 'Node Js',
+      per: '70%'
+    },
   ];
   constructor() { }
   ngOnInit(): void {

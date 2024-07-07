@@ -6,6 +6,7 @@ import { State } from '../auth/store/auth.reducer';
 import { Router } from '@angular/router';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedinIn, faGithub, faSkype } from '@fortawesome/free-brands-svg-icons';
+import { scrollIntoView, scrollTo } from 'node_modules/scroll-js/dist/scroll';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -16,7 +17,7 @@ export class SidebarComponent implements OnInit {
   public isAuthenticated!: boolean;
   public themeClass: string = 'light';
   @Output() sidebarEvent = new EventEmitter<boolean>();
-  iconList: any = [
+  public iconList: any = [
     {
       id: 1,
       icon: faFacebook,
@@ -80,18 +81,18 @@ export class SidebarComponent implements OnInit {
       routing: 'contact',
       className: 'fa-solid fa-phone',
     },
-    {
-      id: 6,
-      label: 'Login',
-      routing: '/auth',
-      className: 'fa-solid fa-right-to-bracket',
-    },
-    {
-      id: 7,
-      label: 'Logout',
-      routing: '/auth',
-      className: 'fa-solid fa-right-to-bracket',
-    },
+    // {
+    //   id: 6,
+    //   label: 'Login',
+    //   routing: '/auth',
+    //   className: 'fa-solid fa-right-to-bracket',
+    // },
+    // {
+    //   id: 7,
+    //   label: 'Logout',
+    //   routing: '/auth',
+    //   className: 'fa-solid fa-right-to-bracket',
+    // },
   ]
   constructor(private store: Store<fromApp.AppState>, private router: Router) { }
   ngOnInit(): void {
