@@ -36,12 +36,7 @@
       }
     }
   }
-
-  .form-group {
-    .form-control {
-    }
-    span {
-      color: red;
-    }
+  .contact-us {
+    @include padding(16px 36px);
   }
 }

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  public bioList:{subMenu:{id:number,bioLabel:string,bioDetail:string,link?:string}[]}[] = [
+  public bioList: { subMenu: { id: number, bioLabel: string, bioDetail: string, link?: string }[] }[] = [
     {
       subMenu: [
         {
@@ -18,7 +18,7 @@ export class AboutComponent implements OnInit {
           id: 2,
           bioLabel: 'Website',
           bioDetail: 'hariitilavat.web.app',
-          link:'https://hariitilavat.web.app/'
+          link: 'https://hariitilavat.web.app/'
         },
         {
           id: 3,
@@ -57,30 +57,30 @@ export class AboutComponent implements OnInit {
       ],
     },
   ];
-  public clientsMenu=[
+  public clientsMenu = [
     {
-      icon:'fa fa-regular fa-smile fa-3x',
-      clientCount:2,
-      feedback:'Happy Clients',
-      desc:'I had a wonderful experience working with my clients'
+      icon: 'fa fa-regular fa-smile',
+      title: '2',
+      feedback: 'Happy Clients',
+      desc: 'I had a wonderful experience working with my clients'
     },
     {
-      icon:'fa-solid fa-history fa-3x',
-      clientCount:'5+',
-      feedback:'Projects',
-      desc:'I have created more than 12 Projects!'
+      icon: 'fa-solid fa-history',
+      title: '5+',
+      feedback: 'Projects',
+      desc: 'I have created more than 12 Projects!'
     },
     {
-      icon:'fa fa-headphones fa-3x',
-      clientCount:'24/7',
-      feedback:'Hours of Support',
-      desc:'Customer service with 24/7 availability'
+      icon: 'fa fa-headphones',
+      title: '24/7',
+      feedback: 'Hours of Support',
+      desc: 'Customer service with 24/7 availability'
     },
     {
-      icon:'fa-solid fa-people-group fa-3x',
-      clientCount:7,
-      feedback:'Team member',
-      desc:'Consistently goes above and beyond expectations.'
+      icon: 'fa-solid fa-people-group',
+      title: '7',
+      feedback: 'Team member',
+      desc: 'Consistently goes above and beyond expectations.'
     },
   ]
   ngOnInit(): void { }

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="resume-heading">
+  <div class="resume-heading mb-3">
     <div class="resume-title">
       <span class="title">Resume</span>
     </div>
@@ -17,7 +17,8 @@
           </div>
           <div class="resume-item">
             <h5 class="resume-sub-title">{{'Harit Tilavat' | uppercase}}</h5>
-            <p class="italic">Hello, I'm Harit, an experienced Angular developer with a passion for crafting robust and scalable web applications using trending front-end technologies.</p>
+            <p class="italic">Hello, I'm Harit, an experienced Angular developer with a passion for crafting robust and
+              scalable web applications using trending front-end technologies.</p>
             <ul>
               <li>Velanja, Surat</li>
               <li>+91 6356995453</li>
@@ -26,50 +27,14 @@
           </div>
         </div>
         <div class="education">
-          <div class="resume-title">
-            <h3>Education</h3>
-          </div>
-          <!-- <div class="resume-item">
-            <h5 class="resume-sub-title">Master of Computer application</h5>
-            <h5 class="year">2015-2016</h5>
-            <p class="italic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, accusamus.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus similique maiores, a fugit expedita
-              dolores delectus quo molestiae aperiam quod?</p>
-          </div> -->
-          <div class="resume-item">
-            <h5 class="resume-sub-title">Bachelor of Computer application</h5>
-            <h5 class="year">2021 Present</h5>
-            <p class="italic">Sutex Bank College of Computer Apllications, Amroli</p>
-            <p>In this degree course I have Skilled in programming, frontend design, and database management systems. </p>
+          <div class="exp-container">
+            <app-resume-item [title]="'Education'" [menu]="educationList"></app-resume-item>
           </div>
         </div>
       </div>
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-12">
-        <div class="experience">
-          <div class="resume-title">
-            <h3>Professional Experience</h3>
-          </div>
-          <div class="resume-item">
-            <h5 class="resume-sub-title">FRONTEND DEVELOPMENT</h5>
-            <h5 class="year">2022 Present</h5>
-            <p class="italic">Working at <a href="https://proflex.io" target="_blank"> Proflex.io</a> </p>
-            <ul>
-              <li>Strong knowledge of popular front-end frameworks such as React, Angular I can build dynamic and responsive web applications.</li>
-              <li>Managed up to 3 projects or tasks at a given time while under pressure</li>
-
-              <li>I can develop a Responsive Website based on Client Requirements.</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h5 class="resume-sub-title">WEB DESIGN</h5>
-            <h5 class="year">2021-2022</h5>
-            <p class="italic">Rajeev Gandhi Computer Saksharta Mission</p>
-            <ul>
-              <li>In this course I have learned How to create Responsive Web Design</li>
-              <li>Proficient in HTML5 and CSS3, utilizing these fundamental web technologies to create well-structured web pages.</li>
-              <li>Skilled in creating responsive web designs using CSS media queries.</li>
-            </ul>
-          </div>
+        <div class="exp-container">
+          <app-resume-item [menu]="expList" [title]="'Professional Experience'"></app-resume-item>
         </div>
       </div>
     </div>

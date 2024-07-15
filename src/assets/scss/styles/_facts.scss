@@ -1,13 +1,14 @@
 .facts {
   .fact-clients {
-    .fact-content{
+    .fact-content {
       display: flex;
-      .content-info{
+      .content-info {
         margin-left: 15px;
       }
     }
     i {
       color: $main-color-light;
+      @include font-size(48px);
     }
   }
 }

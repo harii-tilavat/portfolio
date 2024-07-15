@@ -7,11 +7,8 @@
       display: flex;
       justify-content: space-between;
       margin: 5px 0px;
-
-      span {
-        font-size: 0.75rem;
-        font-weight: 750;
-      }
+      @include font-size(13px);
+      font-family: $inter-semibold;
     }
 
     .progress {

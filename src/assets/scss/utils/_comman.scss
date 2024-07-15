@@ -30,7 +30,7 @@ span {
 }
 @include media-breakpoint-down(sm) {
   body {
-    // padding-top: 75px;
+    @include font-size(0.9rem);
     &.announce {
       // padding-top: calc(75px + 62px);
     }

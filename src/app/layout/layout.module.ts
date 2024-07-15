@@ -11,6 +11,7 @@ import { AskProjectComponent } from './components/ask-project/ask-project.compon
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ResumeItemComponent } from './components/resume/resume-item/resume-item.component';
 
 
 
@@ -25,6 +26,7 @@ import { CommonModule } from '@angular/common';
     ContactComponent,
     AskProjectComponent,
     AddCommentsComponent,
+    ResumeItemComponent,
   ],
   imports: [
     CommonModule,

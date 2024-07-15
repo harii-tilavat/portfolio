@@ -25,7 +25,9 @@ form {
     display: block;
     position: absolute;
     top: calc(100% + 6px);
+    right: 0;
     @include font-size(12px);
+    color: $red-600;
   }
   .control-label {
     font-family: $inter-medium;
@@ -59,7 +61,7 @@ form {
   font-family: $inter-medium;
   @include line-height(20px);
   @include font-size(14px);
-  &.form-control-xl{
+  &.form-control-xl {
     @include padding(21px 25px);
   }
   // Placeholders and and labels-as-placeholders should look the same

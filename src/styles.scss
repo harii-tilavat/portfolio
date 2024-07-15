@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-@import './assets/scss/nugget';
-@import './assets/scss/main';
-
+@import "./assets/scss/portfolio";
+@import "./assets/scss/main";
 
 // ---------------------------------------------------------------------------
 //portfolio
@@ -20,9 +18,9 @@
 
 .title {
   color: $main-title;
-  font-size: 2.3rem;
+  @include font-size(32px);
   // font-family: $inter-medium;
-  font-family: $inter-medium;
+  font-family: $sora-semibold;
   &::after {
     content: "";
     display: block;
@@ -51,7 +49,6 @@
     margin: 5px;
   }
 }
-
 
 // @import '.';
 // @import "/src/app/scss/sidebar";

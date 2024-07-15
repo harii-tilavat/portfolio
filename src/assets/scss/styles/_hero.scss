@@ -1,5 +1,6 @@
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("/assets/profile-img/hero-bg1.webp");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/assets/profile-img/hero-bg1.webp");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -11,8 +12,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .hero-header{
-    .hire-me{
+  .hero-header {
+    .hire-me {
       background-color: white;
       // background: transparent;
       box-shadow: 0 0 10px $main-color-light;
@@ -20,9 +21,9 @@
     }
   }
   .header-title {
-    font-family: $poppin;
     .hero-name {
       font-size: 4rem;
+      font-family: $sora-bold;
     }
 
     .hero-skill {
@@ -35,7 +36,7 @@
       }
     }
   }
-  .home-btn{
+  .home-btn {
     position: fixed;
     bottom: 15px;
     right: 15px;

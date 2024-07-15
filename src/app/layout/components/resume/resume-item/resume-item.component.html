@@ -1,0 +1,23 @@
+<div class="exp-container">
+    <div class="experience">
+        <div class="resume-title">
+            <h3>{{title}}</h3>
+        </div>
+        <div class="resume-item" *ngFor="let item of menu">
+            <h5 class="resume-sub-title">{{item.title}}</h5>
+            <h5 class="year">{{item.year}}</h5>
+            <p class="italic">
+                <span>{{item.subTitle}}</span>
+                <ng-container *ngIf="item.link;">
+                    <a [href]="item.link && item.link.url" target="_blank"> {{item.link && item.link.name}}</a>
+                </ng-container>
+            </p>
+            <div class="list-container">
+                <ng-container></ng-container>
+            </div>
+            <ul>
+                <li *ngFor="let subItem of item.descMenu" [ngClass]="{'list-unstyled':!isList}">{{subItem}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

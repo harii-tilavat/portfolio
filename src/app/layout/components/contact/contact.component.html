@@ -18,15 +18,15 @@
       <div class="location-section">
         <div class="content">
           <a [href]="item.url" target="_blank" class="info" *ngFor="let item of contactList">
-              <div class="icon d-flex-center">
-                <span>
-                  <i [class]="item.icon"></i>
-                </span>
-              </div>
-              <div class="content-info">
-                <span class=" font-semibold ">{{item.label}} </span>
-                <span>{{item.desc}} </span>
-              </div>
+            <div class="icon d-flex-center">
+              <span>
+                <i [class]="item.icon"></i>
+              </span>
+            </div>
+            <div class="content-info">
+              <span class=" font-semibold ">{{item.label}} </span>
+              <span>{{item.desc}} </span>
+            </div>
           </a>
         </div>
         <div class="image-section">
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 mt-lg-0 mt-5">
-      <div class="contact-us">
+      <div class="contact-us card">
         <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <div class="row">
@@ -47,7 +47,7 @@
                 <div class="name-info mb-4 mb-md-0">
                   <label for="name" class="control-label">Name <span>*</span> </label>
                   <input type="text" class="form-control" id="name" formControlName="name">
-                  <div class="error-message" *ngIf="contactForm.controls['name'].touched || isSubmitted">
+                  <div class="form-error" *ngIf="contactForm.controls['name'].touched || isSubmitted">
                     <span class="error" *ngIf="contactForm.controls['name'].errors?.['required']">Name
                       required!</span>
                   </div>
@@ -57,7 +57,7 @@
                 <div class="email-info ">
                   <label for="email" class="control-label">Email <span>*</span> </label>
                   <input type="email" class="form-control" id="email" formControlName="email">
-                  <div class="error-message" *ngIf="contactForm.controls['email'].touched || isSubmitted">
+                  <div class="form-error" *ngIf="contactForm.controls['email'].touched || isSubmitted">
                     <span class="error" *ngIf="contactForm.controls['email'].errors?.['required']">Email
                       required!</span>
                     <span class="error" *ngIf="contactForm.controls['email'].errors?.['email']">Enter valid
@@ -70,7 +70,7 @@
           <div class="form-group">
             <label for="subject" class="control-label">Subject <span>*</span> </label>
             <input type="text" class="form-control" id="subject" formControlName="subject">
-            <div class="error-message" *ngIf="contactForm.controls['subject'].touched || isSubmitted ">
+            <div class="form-error" *ngIf="contactForm.controls['subject'].touched || isSubmitted ">
               <span class="error" *ngIf="contactForm.controls['subject'].errors?.['required']">Subject
                 required!</span>
             </div>
@@ -78,7 +78,7 @@
           <div class="form-group">
             <label for="message" class="control-label">Message <span>*</span> </label>
             <textarea name="" id="message" rows="8" class="form-control" formControlName="message"></textarea>
-            <div class="error-message" *ngIf="contactForm.controls['message'].touched || isSubmitted">
+            <div class="form-error" *ngIf="contactForm.controls['message'].touched || isSubmitted">
               <span class="error" *ngIf="contactForm.controls['message'].errors?.['required']">
                 Message required!
               </span>
