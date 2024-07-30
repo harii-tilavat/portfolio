@@ -9,7 +9,7 @@
   height: 100vh;
   transition: 0.3s;
   z-index: 1000;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  @include box-shadow-navbar();
   .profile {
     border-bottom: 1px solid $border-light;
     text-align: center;
@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @include box-shadow-navbar();
     .profile-pic {
       padding: 10px;
       display: flex;
